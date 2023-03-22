@@ -1,0 +1,152 @@
+*{margin: 0;padding: 0;box-sizing: border-box;}
+
+html{
+    --w: 25px;
+    --h : 5px;
+    background-color: #25262a;
+    color: white;
+}
+
+
+body > header{
+    height: 70px;
+    width: 100%;
+    padding: 20px;
+}
+
+.barre{
+    width: var(--w);
+    background-color: #fdc234;
+    height: var(--h);
+    position: relative;
+}
+
+.barre::before{
+    width: var(--w);
+    content: '';
+    position: absolute;
+    background-color: #fdc234;
+    height: var(--h);
+    top: -7px;
+}
+.barre::after{
+    width: var(--w);
+    content: '';
+    position: absolute;
+    background-color: #fdc234;
+    height: var(--h);
+    top: 7px;
+}
+
+.barre:hover{
+    width: 30px;
+}
+
+.titre{
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translatex(-50%);
+    font-size: 30px;
+    font-weight: bold;
+    color: #fdc234;
+    text-shadow: 0 0 10px;
+}
+
+main{
+    width: 90%;
+    margin: 20px  auto;
+    background-color: #fff;
+    color: #000;
+    border-radius: 20px;
+    box-shadow: 0 0 10px white;
+    opacity: 0;
+    transform: translatey(50px);
+    transition: all 1s;
+}
+
+main header{
+    position: relative;
+    padding-left: 75px;
+    padding-top: 10px;
+    height: 85px;
+}
+header .photo{
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: #000;
+
+}
+header .name{
+    font-weight: bold;
+    font-size: 23px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header .time{
+    font-style: 13px;
+    color: gray;
+    margin-top: 10px;
+}
+
+header .point{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.body{
+    width: 100%;
+    margin: 15px 0 ;
+
+}
+.body .msg{
+    width: 80%;
+    margin:  0 auto;
+    font-size: 30px;
+    font-weight: bold;
+    color: #25262a;
+}
+
+.barre_like{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.r,.l{
+   margin: 5px 10px;
+   font-style: oblique;
+}
+
+.icon{
+    padding: 5px 25px ;
+    margin: 0 15px;
+    display: inline-block;
+    position: relative;
+    text-align: right;
+}
+.icon::before{
+    position: absolute;
+    content: '';
+    height: 20px;
+    width: 20px;
+    background-size: cover;
+    background-image: url('icones/comme.png');
+    left: 0px;
+    vertical-align: middle;
+}
+
+.cmt{
+    float: right;
+    padding-right: 0;
+}
+.cmt::before{
+    
+    background-image: url(icones/commentaire.png);
+}

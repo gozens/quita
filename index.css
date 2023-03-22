@@ -26,12 +26,22 @@ header{
 
 }
 header .titre{
-    position: absolute;
-    left: 40%;
-    top: 0;
     font-weight: bold;
     font-size: 20px;
+    display: inline;
+    float: right;
+    margin-top: 3px;
+    margin-right: 3px;
+    transform: translateY(-30px);
+    
+    animation-name: ci;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
+
+@keyframes ci {100%{transform: translate(0);}}
+
+
 header .img{
     position: absolute;
     left: 50px;
@@ -50,13 +60,45 @@ header .img img{
     z-index: 4;
 }
 .bare .b1{
-    transition: all 1s;
     width: 30px;
     height: 5px;
     background-color: rgb(0, 0, 0);
     margin-bottom: 3px;
     border-radius: 15px;
+    margin-left: -40px;
+    /* transform: translateX(-40px); */
+    /* transition: all 1s; */
 }
+.b1:first-child{
+    
+    animation-name: barres;
+    animation-iteration-count: 1;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+.b1:nth-child(2){
+    
+    animation-name: barres;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.b1:last-child{
+    
+    animation-name: barres;
+    animation-iteration-count: 1;
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+}
+
+
+@keyframes barres {
+    100%{
+        margin-left: 0;
+    }
+}
+
+
 .flotte{
     display: none;
     position: fixed;
@@ -92,29 +134,26 @@ header .img img{
     border-radius: 30px;
 }
 
-#akwaba{
+
+.logos{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.logos .wel{
     font-weight: bold;
     font-size: 35px;
-    letter-spacing: 200px;
+    letter-spacing: 30px;
     text-transform: capitalize;
-    text-align: center;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    animation: akwaba 2s;
+    margin-left: 100%;
+    animation-name: ak;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
-    padding-left: 100%;
-    
 }
 
-@keyframes akwaba {
-    100%{
-        padding-left: 0%;
-        letter-spacing: 30px;
-
-    }
-}
-
+@keyframes ak {100%{margin: 0;}}
 
 nav .ville{
     position: fixed;
@@ -159,7 +198,6 @@ nav .ville::after{
     }
 }
 
-
 .ville .villes{
     position: relative;
     padding: 10px 5px;
@@ -172,6 +210,9 @@ nav .ville::after{
 
 }
 
+.container{
+    width: 95%;
+}
 
 a{
     text-decoration: none;
@@ -197,11 +238,18 @@ section.presentation .description{
     text-transform: uppercase;
 }
 
-section.abidjan{
+section.ville_a{
     width: 100%;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s, transform 1s;
+    box-shadow: 0 0 10px black;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    overflow: hidden;
 }
 
-section.abidjan .nom_ville{
+section.ville_a .nom_ville{
     width: 100%;
     text-align: center;
     text-transform: capitalize;
@@ -213,7 +261,7 @@ section.abidjan .nom_ville{
     letter-spacing: 5px;
     
 }
-section.abidjan .photo{
+section.ville_a .photo{
     width: 100%;
 }
 
@@ -225,51 +273,49 @@ section.abidjan .photo{
     padding: 10px;
     font-size: 20px;
     font-style: italic;
+    opacity: 0;
+    transform: translate(-50px,50px);
+    transition: opacity 1s, transform 1s;
 }
 
-section.abidjan .photo .font {
+section.ville_a .photo .font {
     width: 100%;
-    height: 150px;
+    height: 250px;
     background-image: url("img/IMG_1539.JPG") ;
     background-size: cover;
 }
-
 
 .voir{
     text-align: right;
     font-size: 20px;
     height: inherit;
     width: 100%;
-    padding-top: 10px;
+    /* position: relative; */
 }
-.voir span{
-    margin-right: 5px;
-    color: #fff;
+.voir::after{
+    content: 'voir plus';
+    padding: 1px;
+    color: #000;
     font-weight: bold;
     font-size: 15px;
-    display: none;
-    
+    background-color: #fff;
+    transition: all 1s;
+    width: 70px;
+    float: right;
+    text-align: center;
+    opacity: 0;
+    cursor: pointer;
+
 }
 .voir:hover{
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.679), rgba(0, 0, 0, 0.048));
-    transition: all 1s;
 }
-
-.voir::after{
-    content: 'voir plus';
-    background-color: #fff;
-    color: #000;
-    font-weight: bold;
-    padding: 5px;
-    transition:all 1s;
-    opacity: 0;
-    
-}
-
 .voir:hover::after{
-    margin: 10px;
-    opacity: 1;
+    transition: all 1s;
     border-radius: 20px;
+    opacity: 1;
+    padding: 3px;
+    transform: translate(-5px,10px);
 
 }
 section{
@@ -322,12 +368,14 @@ footer .sp {
     background-color: #fff;
     padding: 10px;
 }
+
+.version {display: none;}
 @media screen and (min-width: 600px) {
     section,footer {
         display: none;
     }
     .version{
-        margin: 100px auto;
+        margin: 150px auto;
         display: block;
         color: #fff;
         background-color: #000;

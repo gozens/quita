@@ -1,5 +1,3 @@
-
-
 // const barre = document.querySelector('.bare')
 // const ville = document.querySelector('.ville')
 // let i = 0
@@ -52,7 +50,7 @@ function no(){
 
 function anim_barre(x){
     if( x){
-        el[1].style.opacity = 0
+        el[1].style.opacity = "0"
         el[0].style.transform = 'rotate(-60deg) translate(-5px,5px)'
         el[2].style.transform = 'rotate(60deg) translate(-5px,-5px)'
         return
@@ -60,8 +58,12 @@ function anim_barre(x){
     
     el[0].style.transform = 'rotate(0deg) translate(0)'
     el[2].style.transform = 'rotate(0deg) translate(0)'
-    el[1].style.opacity = 1
+    el[1].style.opacity = "1"
     
+}
+
+for(els of el ) {
+    els.style.transition ='1s linear'
 }
 
 barre.onclick = () => {
@@ -87,4 +89,34 @@ barre.onclick = () => {
     no_barre = 1
     
    no()
+}
+
+const ville = document.querySelectorAll('.ville_a')
+const v = ville[2]
+function fville(v) {
+    v.transition = '2s linear'
+    v.style.opacity = "1"
+    v.style.transform = 'translate(0)'
+    const c = v.querySelector('.desc')
+    c.transition = '2s linear'
+    c.style.opacity = "1"
+    c.style.transform = 'translate(0)'
+   
+}
+
+const ob = new IntersectionObserver(el =>{
+    for (let i of el) {
+       if (i.isIntersecting){
+        fville(i.target)
+        console.log(i.target.querySelector('.n').innerHTML)
+        ob.unobserve(i.target)
+       }
+    }
+},{
+    threshold:0.5
+})
+
+
+for (const vl of ville) {
+    try {ob.observe(vl)} catch (error) {}
 }
