@@ -1,8 +1,7 @@
 
 const assinie = document.getElementById('assinie')
 const defias = assinie.querySelector('.diapo')
-console.log(defias)
-// assinie\img\5.jpeg
+
 function add(params) {
     const div = document.createElement('div')
     div.setAttribute('class','carosel')
@@ -14,7 +13,7 @@ function add(params) {
     defias.appendChild(div)
 }
 
-console.log(defias);
+
 
 const barre = document.querySelector('.bare')
 let no_barre = 1
