@@ -1,17 +1,20 @@
-// const barre = document.querySelector('.bare')
-// const ville = document.querySelector('.ville')
-// let i = 0
-// barre.onclick = ()=>{
-//     if (i == 0){
-//         ville.style.display ='block'
-//         i++
-//         return
-//     }
-//     i=0
-//     ville.style.display ='none'
 
-// }
+const assinie = document.getElementById('assinie')
+const defias = assinie.querySelector('.diapo')
+console.log(defias)
+// assinie\img\5.jpeg
+function add(params) {
+    const div = document.createElement('div')
+    div.setAttribute('class','carosel')
+    div.innerHTML += '<div class="imgs">'
+    div.innerHTML += '<img src="assinie\\img\\'+params+'.jpeg" alt="">'
+    div.innerHTML += '</div>'
+    div.innerHTML +='<div class="tit_"><div class="titre2">carosel 1</div><div class="des">une petite description pour la carosel1</div>'
+    div.innerHTML += '</div>'
+    defias.appendChild(div)
+}
 
+console.log(defias);
 
 const barre = document.querySelector('.bare')
 let no_barre = 1
@@ -62,8 +65,13 @@ function anim_barre(x){
     
 }
 
-for(els of el ) {
-    els.style.transition ='1s linear'
+for(let els of el ) {
+    try {
+        
+        el.style.transition ='1s linear'
+    } catch (error) {
+        
+    }
 }
 
 barre.onclick = () => {
@@ -120,3 +128,26 @@ const ob = new IntersectionObserver(el =>{
 for (const vl of ville) {
     try {ob.observe(vl)} catch (error) {}
 }
+
+
+
+
+import { Carosel } from "./fonction.js"
+
+window.onload = ()=>{
+    for (let i = 1; i < 12; i++) {
+        add(i)
+        
+    }
+    const panorama = document.querySelectorAll('.diapo')
+    const option = {
+        visible:1,
+        defile:1,
+        auto:true
+    }
+    panorama.forEach(diapo => {
+        
+        new Carosel(diapo,option)
+    });
+}
+

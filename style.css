@@ -19,7 +19,14 @@ body > header{
     background-color: #fdc234;
     height: var(--h);
     position: relative;
+    margin-left: -50px;
+    animation-name: barres;
+    animation-iteration-count: 1;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
 }
+
+
 
 .barre::before{
     width: var(--w);
@@ -38,6 +45,13 @@ body > header{
     top: 7px;
 }
 
+@keyframes barres {
+    100%{
+        margin-left: 0;
+    }
+}
+
+
 .barre:hover{
     width: 30px;
 }
@@ -46,11 +60,17 @@ body > header{
     position: absolute;
     top: 5px;
     left: 50%;
-    transform: translatex(-50%);
+    transform: translatex(-50%) ;
     font-size: 30px;
     font-weight: bold;
     color: #fdc234;
     text-shadow: 0 0 10px;
+    text-transform: capitalize;
+    letter-spacing: 3px;
+    margin-top: -40px;
+    transition: margin 1s;
+
+
 }
 
 main{
@@ -63,6 +83,30 @@ main{
     opacity: 0;
     transform: translatey(50px);
     transition: all 1s;
+}
+
+.logo{
+    margin: 0 auto;
+    display: flex;
+    width: 90%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.img1{
+    transform: translate(-150px);
+    transition: transform 1s;
+}
+.img2{
+    transform: translate(150px);
+    transition: transform 1s;
+
+}
+
+.logo img[alt="logo1"]{
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 0 5px white;
 }
 
 main header{
@@ -81,6 +125,7 @@ header .photo{
 
 }
 header .name{
+    text-transform: uppercase;
     font-weight: bold;
     font-size: 23px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -149,4 +194,26 @@ header .point{
 .cmt::before{
     
     background-image: url(icones/commentaire.png);
+}
+
+.let{
+    width: 90%;
+    margin: 0 auto;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.let span{
+    color: #fdc234;
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 23px;
+}
+@media screen and (min-width:800px) {
+    main{
+        width: 50%;
+    }
+    .let{
+        width: 80%;
+    }
 }
