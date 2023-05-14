@@ -38,7 +38,8 @@ export class Carosel{
         this.option = Object.assign({},{
             visible:1
             ,defile:1,
-            margin:0
+            margin:0,
+            observe:false
         },option)
         
         try {
@@ -50,6 +51,7 @@ export class Carosel{
             
         }
 
+       
         // la taille d'un element
         this.visible()
         this.w=this.child[this.compter].getBoundingClientRect()

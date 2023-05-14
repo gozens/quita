@@ -111,24 +111,79 @@ function fville(v) {
    
 }
 
+const barreCote = document.querySelector('.fix')
+function makeAdiv(text,link = '#') {
+    const a = document.createElement('a')
+    a.setAttribute('hreef',link)
+    a.innerHTML = '<div class="villes" id="abidjan">'+text+'</div>'
+    barreCote.appendChild(a)
+}
+
+const option = {
+    visible:1,
+    defile:1,
+    auto:true
+}
+
 const ob = new IntersectionObserver(el =>{
     for (let i of el) {
        if (i.isIntersecting){
         fville(i.target)
-        console.log(i.target.querySelector('.n').innerHTML)
+        
+        const dp = i.target.querySelector('.diapo')
+        new Carosel(dp,option)
+        
+        const text = i.target.querySelector('.n').innerHTML
+        makeAdiv(text)
         ob.unobserve(i.target)
+        
+        console.log(text)
        }
     }
-},{
-    threshold:0.5
-})
+},{threshold:0.5})
 
 
 for (const vl of ville) {
     try {ob.observe(vl)} catch (error) {}
 }
 
+// annimation load qui permet de verifier le niveau de scroll de la page
+const load = document.querySelector('.load')
 
+function loads() {
+    
+    const d = document.documentElement
+    const heightVisibl = d.clientHeight
+    const st = d.scrollTop 
+    const heightAll = d.scrollHeight 
+    const cla = (heightVisibl + st) / heightAll
+    load.style.opacity = "1"
+    load.style.width = cla *100+'%'
+    const t = setInterval(() => {
+        const verfier = d.scrollTop
+        if(verfier == st){ 
+            load.style.opacity = "0"
+            clearInterval(t)
+        }
+        
+    }, 500);
+
+}
+
+window.onscroll = ()=>{
+
+    loads()
+
+    if (scrollY >= (450+137) && innerWidth >=800){
+        barreCote.style.position = 'fixed'
+        barreCote.style.top = '35px'
+        barreCote.style.width = '250px'
+        barreCote.style.right = '0px'
+        barreCote.style.bottom = '0'
+        return
+    }
+    barreCote.style.position = 'static'
+}
 
 
 import { Carosel } from "./fonction.js"
@@ -138,15 +193,18 @@ window.onload = ()=>{
         add(i)
         
     }
-    const panorama = document.querySelectorAll('.diapo')
-    const option = {
-        visible:1,
-        defile:1,
-        auto:true
-    }
-    panorama.forEach(diapo => {
+    // const panorama = document.querySelectorAll('.diapo')
+    // const option = {
+    //     visible:1,
+    //     defile:1,
+    //     auto:false
+    // }
+    // panorama.forEach(diapo => {
         
-        new Carosel(diapo,option)
-    });
+    //     new Carosel(diapo,option)
+    // });
 }
+
+
+
 

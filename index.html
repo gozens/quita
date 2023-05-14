@@ -19,8 +19,6 @@
             <img src="img/if_uns.jpg" width="80" class="img2" alt="logo1">
         </div>
         <main>
-
-
             <header>
                 <div class="photo">
                     <img src="img/if_uns.jpg" alt="" width="60">
@@ -45,13 +43,7 @@
         </main>
 
         <footer>
-            <div class="let">
-                <!-- le groupe <span>IDA</span>  d'<span>institut famah</span> 
-                surnommé les <span>dev</span>
-                vous présente une représentation du
-                 <span>tourisme en côte d 'voire</span>  -->
-                
-             </div>
+            <div class="let"></div>
         </footer>
 
 
@@ -96,19 +88,18 @@ const msg ='le groupe $ d $ surnommé les $ vous présente une représentation d
                     vt++
                 }
                 else{
-
                     div.innerHTML += msg[mots]
                 }
                 // condition d'arret
                 if(mots >= msg.length -1) {
                     clearInterval(t)
                     setTimeout(() => {
-                        head()
+                        // head()
                         
                     }, 200);
 
                 }else{ mots++}
-            }), 200);
+            }), 100);
             
             function head() {
 
