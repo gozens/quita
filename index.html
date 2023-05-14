@@ -93,10 +93,7 @@ const msg ='le groupe $ d $ surnommé les $ vous présente une représentation d
                 // condition d'arret
                 if(mots >= msg.length -1) {
                     clearInterval(t)
-                    setTimeout(() => {
-                         head()
-                        
-                    }, 280);
+                    setTimeout(() => {head()}, 280);
 
                 }else{ mots++}
             }), 80);
