@@ -14,7 +14,6 @@ function add(params) {
 }
 
 
-
 const barre = document.querySelector('.bare')
 let no_barre = 1
 const nav = document.querySelector('.ville')

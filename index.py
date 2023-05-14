@@ -7,6 +7,4 @@ effter()
 
 f = cheminAll('lahou\\img')
 x = 1
-
-for i in f:
-    n = __veri_nom__(i)
+# ffdf,ml 
