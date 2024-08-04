@@ -79,12 +79,12 @@ barre.onclick = () => {
         div_fl.style.display = 'block'
         
         setTimeout(() => {
-            nav.style.transition = '1s linear'
+            nav.style.transition = '0.6s linear'
             nav.style.opacity = "1"
             nav.style.width = 190+"px"
 
             div_fl.style.opacity = "1"
-        }, 300);
+        }, 0.1);
         
         anim_barre(no_barre)
         no_barre = 0
@@ -98,6 +98,15 @@ barre.onclick = () => {
 }
 
 const ville = document.querySelectorAll('.ville_a')
+ville.forEach( (e) => {
+        const id = e.querySelector('.n').innerHTML
+        const newNode = document.createElement('div')
+        newNode.setAttribute('id', id)
+        e.appendChild(newNode)
+        e.insertBefore(newNode, e.firstChild)   
+    }
+)
+
 const v = ville[2]
 function fville(v) {
     v.transition = '2s linear'
@@ -113,8 +122,8 @@ function fville(v) {
 const barreCote = document.querySelector('.fix')
 function makeAdiv(text,link = '#') {
     const a = document.createElement('a')
-    a.setAttribute('hreef',link)
-    a.innerHTML = '<div class="villes" id="abidjan">'+text+'</div>'
+    a.setAttribute('href',link)
+    a.innerHTML = '<div class="villes" id="' + link  + '">'+text+'</div>'
     barreCote.appendChild(a)
 }
 
@@ -128,18 +137,18 @@ const ob = new IntersectionObserver(el =>{
     for (let i of el) {
        if (i.isIntersecting){
         fville(i.target)
-        
+
         const dp = i.target.querySelector('.diapo')
         new Carosel(dp,option)
         
         const text = i.target.querySelector('.n').innerHTML
-        makeAdiv(text)
+        makeAdiv(text, "#"+text)
         ob.unobserve(i.target)
-        
+
         console.log(text)
        }
     }
-},{threshold:0.5})
+},{threshold:0.2})
 
 
 for (const vl of ville) {

@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    z-index: -1;
+    /* z-index: -1; */
     box-sizing: border-box;
 }
 body{
@@ -27,7 +27,7 @@ header{
 }
 header .titre{
     font-weight: bold;
-    font-size: 20px;
+    font-size: 30px;
     display: inline;
     float: right;
     margin-top: 3px;
@@ -229,9 +229,11 @@ section.presentation .description{
     color: black;
 }
 
-.desc::first-letter,.presentation .description::first-letter{
-    font-size: 40px;
+.desc span,.presentation .description::first-letter{
+    font-size: 25px;
     text-transform: uppercase;
+    color: green;
+    font-weight: bold;
 }
 
 section.ville_a{
@@ -243,6 +245,11 @@ section.ville_a{
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
     overflow: hidden;
+}
+
+.ville_a > div{
+    margin-top: -100px;
+    /* padding-top: ; */
 }
 
 section.ville_a .nom_ville{
@@ -266,20 +273,29 @@ section.ville_a .photo{
     text-align: justify;
     background-color: rgba(255, 255, 255, 0.877);
     color: #000;
-    padding: 10px;
+    padding: 50px 10px 10px 10px;
     font-size: 20px;
     font-style: italic;
     opacity: 0;
     transform: translate(-50px,50px);
     transition: opacity 1s, transform 1s;
+    height: inherit;
+    overflow: hidden;
 }
 
-section.ville_a .photo .font {
+section.ville_a .photo {
     width: 100%;
     background-size: cover;
 }
+.font{
+    position: relative;
+    width: 90%;
+    overflow: hidden;
+    margin-left: 10px;
+}
 .diapo{
     display: flex;
+    transition: 1s;
 
 }
 .carosel{
@@ -352,6 +368,7 @@ footer{
     width: 100%;
     background-color: #000;
     padding-top: 10px;
+    z-index: 1000;
 }
 
 footer .groupe{
@@ -389,6 +406,39 @@ footer .copy{
 .desktop .ville{
     display: none;
 }
+.right-control, .left-control{
+    position: absolute;
+    font-size: 60px;
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+}
+.right-control:hover{
+    cursor: pointer;
+    transform: translateX(-10px);
+}
+.left-control:hover{
+    cursor: pointer;
+    transform: translateX(10px);
+}
+.right-control{
+    right: 0;
+    top: 50%;
+    color: green;
+}
+.left-control{
+    left: 0;
+    top: 50%;
+    color: orange;
+}
+.nom_ville{
+    display: none;
+}
+
+.fix:hover{
+    cursor: pointer;
+}
+
 .version {display: none;}
 @media screen and (min-width: 800px) {
     /* section,footer {
@@ -467,13 +517,14 @@ footer .copy{
         border-radius: 0;
     }
     section.ville_a .photo{
-        display: flex;
-        flex-direction: row;
+        /* display: flex;
+        flex-direction: row; */
         align-items: stretch;
     }
     section.ville_a .photo .desc{
-        width: 50%;
-        padding: 0 10px;
+        width: 98%;
+        padding: 5px 15px;
+        margin: 15px 15px 30px 15px;
         position: relative;
     }
     section.ville_a .photo .diapo{
@@ -486,8 +537,17 @@ footer .copy{
     }
     .desktop .ville{
         display: block;
-        width: 350px;
+        min-width: 260px;
+        margin: 10px;
         position: relative;
+        z-index: -2;
+    }
+
+    .fix a .villes:hover{
+        cursor: pointer;
+    }
+    .villes{
+        z-index: -1;
     }
     .voir{
         display: none;
@@ -503,6 +563,10 @@ footer .copy{
         color: #000;
         padding: 5px 10px;
         font-weight: bold;
+    }
+
+    .right-control, .left-control{
+        font-size: 80px;
     }
     
 }

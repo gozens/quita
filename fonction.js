@@ -36,21 +36,11 @@ export class Carosel{
         
         // option par defaut
         this.option = Object.assign({},{
-            visible:1
-            ,defile:1,
+            visible:1,
+            defile:1,
             margin:0,
             observe:false
         },option)
-        
-        try {
-            
-            // les bouton gautche et droite
-            this.option.gauche.onclick= ()=> this.nextL()
-            this.option.droit.onclick= ()=> this.nextR()
-        } catch (error) {
-            
-        }
-
        
         // la taille d'un element
         this.visible()
@@ -61,6 +51,37 @@ export class Carosel{
                 this.nextR()
             }, 3000);
         }
+
+        let leftC = this.element.parentNode.querySelector('.left-control')
+        let rightC = this.element.parentNode.querySelector('.right-control')
+        
+        leftC.addEventListener('click', () => {
+            this.nextL()
+        })
+        rightC.addEventListener('click', () => {
+            this.nextR()
+        })
+
+        // document.querySelectorAll('.left-control').forEach( ()=> {
+        //     addEventListener('click', () => {
+        //         this.nextL()
+        //         console.log(this.compter)
+        //     })
+        // })
+    }
+
+    /**
+     * crée un div ave les classes passées en parametre
+     * @param {Array} className classe de la div
+     * @return {HTMLElement}
+     */
+    makeDiv(className){
+        const div = document.createElement('div')
+        className.forEach( (e) =>{
+            div.classList.add(e)
+        })
+        return div
+
     }
 
     visible(){
