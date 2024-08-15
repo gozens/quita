@@ -1,122 +1,22 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="IDA class" >
-        <meta name="description" content="représentation du tourisque en Côte d'Ivoire " >
-        <meta property="og:image" content="https://github.com/gozens/quita/blob/main/img/Capture%20web_15-5-2023_202059_gozens.github.io.jpeg">
-        <meta property="og:type" content="website"> <!--type de ..-->
-        <meta property="og:description" content="représentation du tourisque en Côte d'Ivoire ">    
-        <meta property="og:local" content="fr_FR"> <!--indique la langue-->
-        <meta property="og:title" content="Akwaba CI"> <!--indique le nom du site-->
-        
-        <link rel="stylesheet" href="style.css">
-        <link rel="icon" href="img/if_uns.jpg">
-        <title>Akwaba</title>
-
-    </head>
-    <body>
-
-        <header>
-            <div class="barre"></div>
-            <div class="titre">quita</div>
-        </header>
-        
-        <div class="logo">
-            <img src="img/logo-white.png" width="110" class="img1" alt="logo1">
-            <img src="img/if_uns.jpg" width="80" class="img2" alt="logo1">
-        </div>
-        <main>
-            <header>
-                <div class="photo">
-                    <img src="img/if_uns.jpg" alt="" width="60">
-                </div>
-                <div class="name">if uns</div>
-                <div class="time">sponsorisé</div>
-                <div class="point">...</div>
-            </header>
-        
-            <div class="body">
-                <div class="msg">rêvons grand</div>
-            </div>
-
-            <footer>
-                <div class="barre_like">
-                    <div class="l">999 j'aime</div>
-                    <div class="r">999 commentaire</div>
-                </div>
-                <div class="like icon">j'aime</div>
-                <div class="cmt icon">commentaire</div>
-            </footer>
-        </main>
-
-        <footer>
-            <div class="let"></div>
-        </footer>
-
-
-        <script>
-            const main = document.querySelector('main')
-            const titre = document.querySelector('.titre')
-            const imgs = document.querySelectorAll('img[alt=logo1]')
-            setTimeout(() => {
-                main.style.opacity = '1'
-                main.style.transform = 'translate(0) '
-                titre.style.margin = '0'
-                imgs.forEach(element => {
-                    element.style.transform = 'translate(0)'
-                });
-
-            }, 0500);
-const msg ='le groupe $ d $ surnommé les $ vous présente une représentation du $ en $'
-        
-            const mots_key = [
-                'IDA',
-                "institut famah",
-                'dev',
-                "tourisme ",
-                "côte d 'voire"
-            ]
-            const div = document.querySelector('.let')
-            let mots = 0
-            let vt = 0
-
-            function span(params) {
-                const sp = document.createElement('span')
-                div.appendChild(sp)
-                let i = 0
-                sp.innerHTML += params
-            }
-            
-            const t = setInterval((() => {
-
-                if(msg[mots] == '$'){
-                    span(mots_key[vt])
-                    console.log(mots_key[vt])
-                    vt++
-                }
-                else{
-                    div.innerHTML += msg[mots]
-                }
-                // condition d'arret
-                if(mots >= msg.length -1) {
-                    clearInterval(t)
-                    setTimeout(() => {head()}, 280);
-
-                }else{ mots++}
-            }), 80);
-            
-            function head() {
-
-                const h = document.querySelector('head')
-                const meta = document.createElement('meta')
-                meta.setAttribute('http-equiv',"Refresh")
-                meta.setAttribute( 'content',"1; url=quita.html")
-                h.appendChild(meta)
-
-            }
-       </script>
-    </body>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="IDA class" >
+    <meta name="description" content="représentation du tourisque en Côte d'Ivoire " >
+    <meta property="og:image" content="https://github.com/gozens/quita/blob/main/img/Capture%20web_15-5-2023_202059_gozens.github.io.jpeg">
+    <meta property="og:type" content="website"> <!--type de ..-->
+    <meta property="og:description" content="représentation du tourisque en Côte d'Ivoire ">    
+    <meta property="og:local" content="fr_FR"> <!--indique la langue-->
+    <meta property="og:title" content="Akwaba CI"> <!--indique le nom du site-->
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/if_uns.jpg">
+    <title>Akwaba</title>
+</head>
+<body>
+    
+</body>
 </html>
 
