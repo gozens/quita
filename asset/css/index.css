@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.bannier::before{
+    background-color: #2a354f;
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.5;
+}
+
+footer div span{
+    color: #66799e;
+}
+
+/* ombre ring */
+@layer components {
+    .ombre {
+        @apply shadow-md focus:outline-none active:ring-orange-400 focus:ring-orange-400
+        focus:ring-4 hover:ring-orange-400 hover:ring-4 hover:transition-all
+    }
+}
+/* bouton foncer */
+@layer components {
+    .btn-foncer {
+      @apply bg-orange-800 text-orange-50 font-bold text-lg py-2 px-4 rounded-lg shadow-md
+      focus:outline-none active:ring-orange-400 focus:ring-orange-400 focus:ring-4
+      hover:ring-orange-400 hover:ring-4 hover:transition-all hover:bg-orange-800 
+      focus:bg-orange-800
+    }
+}
+
+/* bouton clair */
+@layer components {
+    .btn-clair {
+      @apply bg-orange-50 text-orange-800 font-bold text-lg py-2 px-4 rounded-lg shadow-md
+      focus:outline-none active:ring-orange-400 focus:ring-orange-400 focus:ring-4
+      hover:ring-orange-400 hover:ring-4 hover:transition-all 
+    }
+}
+
+/* lien */
+@layer components {
+    .link {
+      @apply underline italic focus:outline-none hover:bg-orange-50 rounded-lg 
+      px-4 hover:text-orange-800 font-bold active:ring-orange-400 focus:ring-orange-400 
+      focus:ring-4 hover:ring-orange-400 hover:ring-4 hover:transition-all ring-4 ring-transparent
+      visited:text-orange-300 visited:hover:text-orange-300
+    }
+}
+
+@layer utilities {
+
+  .nav {
+      @apply fixed bg-orange-200 top-[60px] left-[-100%]  bottom-0 z-30 pt-7 transition-all overflow-auto md:w-[448px] w-full
+  }
+  .flou{
+      @apply z-20 bg-orange-200/50  backdrop-blur-[16px] backdrop-saturate-[100%]
+  }
+  .flou.active{
+      @apply md:w-full md:fixed transition-all inset-0 
+  }
+  .nav.active{
+      @apply left-0 md:w-[448px]
+  }
+  .nav ul {
+      @apply space-y-3
+  }
+  .nav ul li > * {
+      @apply bg-orange-800 flex m-auto items-center w-[80%]
+      gap-x-5  justify-center py-2 rounded-lg shadow-md focus:outline-none
+      active:ring-orange-400 focus:ring-orange-400 focus:ring-4
+    hover:ring-orange-400 hover:ring-4 hover:transition-all hover:bg-orange-50
+     hover:text-orange-800 hover:font-bold text-orange-50 font-semibold
+  }
+  .nav ul li > .logout {
+      @apply focus:outline-none active:ring-red-400 focus:ring-red-400 focus:ring-4 
+      hover:ring-red-400 hover:ring-4 hover:transition-all  hover:bg-red-800 
+      hover:text-red-50 hover:font-bold text-orange-50 font-semibold
+  }
+  .nav.active ul li > * {
+      @apply justify-normal gap-x-5 pl-7
+  }
+  .nav ul li > * img {
+      @apply h-10 w-10 rounded-full
+  }
+  .nav ul li > *  span {
+      @apply text-xl capitalize
+  }
+}
+
+/* option */
+.option.active .op1{
+  @apply rotate-[130deg] translate-y-[10px]
+}
+.option.active .op2{
+  @apply opacity-0
+}
+.option.active .op3{
+  @apply rotate-[-130deg] translate-y-[-15px]
+}
+
+.success .op {
+  @apply fixed bg-orange-700 text-orange-50 text-xl p-4 m-4 mt-5 rounded-lg shadow-lg top-16 z-30 right-0 ring-transparent hover:transition-all hover:ring-orange-400 ring-4 active:ring-orange-400 focus:outline-none focus:ring-orange-400 focus:ring-4
+}
+.success.echec .op {
+  @apply bg-red-800 text-red-50 hover:ring-red-400 ring-4 active:ring-red-400  focus:ring-red-400 
+}
+.success button{
+  @apply w-5 h-5 bg-orange-700 absolute p-2 flex items-center justify-center -top-2 -right-2 rounded-full font-semibold ring-transparent ring-4 active:ring-orange-400 focus:outline-none focus:ring-orange-400 focus:ring-4
+}
+.success.echec button{
+  @apply bg-red-800 active:ring-red-400 focus:ring-red-400
+}
+.success button div{
+  @apply absolute w-[2px] top-1/2 h-4 bg-orange-50  rounded-lg 
+  -translate-y-1/2
+}
+.success.echec button div{
+  @apply bg-red-50  
+}
+.success div.bar{
+  @apply absolute w-0 h-1 bg-orange-50 bottom-0 left-0
+}
+.success.echec div.bar{
+  @apply bg-red-50
+}
+.success  div.bar{
+  animation: annim-success 2s 1 forwards;
+}
+.success .op {
+  animation: annim-success-opacity-0 .5s 2s 1 forwards;
+}
+.success {
+  animation: annim-success-hidden 0s 2.5s 1 forwards;
+}
+
+@keyframes annim-success {
+  100%{
+      width: 100%;
+  }
+}
+@keyframes annim-success-opacity-0 {
+  100%{
+      opacity: 0;
+  }
+}
+@keyframes annim-success-hidden {
+  100%{
+      display: none;
+  }
+}
+
+.temp::after{
+  content: '';
+}
+.temp::after{
+ @apply absolute -inset-4 transition-all
+}
+.temp:hover:after{
+ @apply absolute bg-orange-200/40  backdrop-blur-[10px] backdrop-saturate-[100%]
+}
+.categorie .active{
+  @apply bg-orange-800 text-orange-50
+}
