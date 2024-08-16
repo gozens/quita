@@ -54,7 +54,7 @@ footer div span{
 @layer utilities {
 
   .nav {
-      @apply fixed bg-orange-200 top-[60px] left-[-100%]  bottom-0 z-30 pt-7 transition-all overflow-auto md:w-[448px] w-full
+      @apply fixed bg-orange-200 top-[100px] left-[-100%]  bottom-0 z-30 pt-7 transition-all overflow-auto md:w-[448px] w-full
   }
   .flou{
       @apply z-20 bg-orange-200/50  backdrop-blur-[16px] backdrop-saturate-[100%]
