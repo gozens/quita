@@ -37,7 +37,7 @@ footer div span{
     .btn-clair {
       @apply bg-orange-50 text-orange-800 font-bold text-lg py-2 px-4 rounded-lg shadow-md
       focus:outline-none active:ring-orange-400 focus:ring-orange-400 focus:ring-4
-      hover:ring-orange-400 hover:ring-4 hover:transition-all 
+      hover:ring-orange-400 hover:ring-4 hover:transition-all
     }
 }
 

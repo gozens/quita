@@ -1,0 +1,31 @@
+{
+    "nom": "abidjan",
+    "chef_district": "nom prenom",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos ea assumenda atque! Quis dignissimos recusandae consequatur, nihil, amet at nobis provident sapiente dicta dolore ipsum reiciendis nostrum neque quibusdam autem.",
+    "commune": [
+        [
+            "",
+            "",
+            [
+                [
+                    "",
+                    ""
+                ]
+            ]
+        ],
+        [
+            "",
+            "",
+            [
+                [
+                    "",
+                    ""
+                ],
+                [
+                    "",
+                    ""
+                ]
+            ]
+        ]
+    ]
+}
