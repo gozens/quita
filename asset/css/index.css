@@ -153,15 +153,12 @@ footer div span{
   }
 }
 
-.temp::after{
-  content: '';
+#json.active #copy{
+  @apply bg-black/80 text-green-300
 }
-.temp::after{
- @apply absolute -inset-4 transition-all
+#json.active{
+  @apply bg-orange-50 text-orange-800 transition-colors
 }
-.temp:hover:after{
- @apply absolute bg-orange-200/40  backdrop-blur-[10px] backdrop-saturate-[100%]
-}
-.categorie .active{
-  @apply bg-orange-800 text-orange-50
+#json1.active span{
+  @apply  text-orange-800 transition-colors
 }

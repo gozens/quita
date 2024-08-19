@@ -1,26 +1,12 @@
 {
-    "nom": "abidjan",
-    "chef_district": "nom prenom",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos ea assumenda atque! Quis dignissimos recusandae consequatur, nihil, amet at nobis provident sapiente dicta dolore ipsum reiciendis nostrum neque quibusdam autem.",
+    "ville": "assinie",
+    "chef_district": "ayedi manassé",
+    "description": "la belle ville d'assinie est célèbre pour sa magnifique statue d'éléphant doré conçu par son excellence Mr le chefs du district j'ai nommé Mr AYEDI MANASSÉ",
     "commune": [
         [
             "",
             "",
             [
-                [
-                    "",
-                    ""
-                ]
-            ]
-        ],
-        [
-            "",
-            "",
-            [
-                [
-                    "",
-                    ""
-                ],
                 [
                     "",
                     ""

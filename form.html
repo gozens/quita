@@ -3,16 +3,15 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="IDA class" >
-    <meta property="og:image" content="https://github.com/gozens/quita/blob/main/img/Capture%20web_15-5-2023_202059_gozens.github.io.jpeg">
-    <meta property="og:type" content="website"> <!--type de ..-->
-    <meta property="og:description" content="représentation du tourisque en Côte d'Ivoire ">    
-    <meta property="og:local" content="fr_FR"> <!--indique la langue-->
-    <meta property="og:title" content="Akwaba CI"> <!--indique le nom du site-->
     
-    <meta name="description" content="représentation du tourisque en Côte d'Ivoire " >
-    <meta property="og:title" content="CI -  tourisme">
-    <meta property="og:description" content="représentation du tourisque en Côte d'Ivoire ">
-    <meta property="og:image" content="https://github.com/gozens/quita/blob/main/asset/image/img/IMG_1538.JPG?raw=true">
+    <meta name="author" content="IDA class" >
+    <meta property="og:type" content="website"> <!--type de ..-->
+    <meta property="og:local" content="fr_FR"> <!--indique la langue-->
+    
+    <meta name="description" content="convertion de données en json" >
+    <meta property="og:title" content="CI -  tourisme | data to json">
+    <meta property="og:description" content="convertion de données en json">
+    <meta property="og:image" content="https://raw.githubusercontent.com/gozens/quita/main/asset/image/img/Capture%20d%E2%80%99%C3%A9cran%202024-08-20%20012522.png">
     <meta property="og:url" content="https://gozens.github.io/quita/">
     
     <link rel="stylesheet" href="asset/css/output.css">
@@ -36,6 +35,7 @@
     </header>
 
     <main class="py-32 container flex m-auto flex-col md:flex-row justify-center gap-x-5 items-center space-y-5 md:space-y-0 md:items-start">
+      
         <form action="" class="w-[90%] max-w-md space-y-3">
             <h1 class="text-center text-3xl uppercase font-bold">data</h1>
             <p class="">enregistrement d'une ville</p>
@@ -66,91 +66,92 @@
 
             <section id="commune" class="space-y-3"></section>
 
-            <template id="commune-temp">
-    
-                <div id="item" class="w-[97%] m-auto pl-3 space-y-3 border-l-2 border-orange-800">
-                    <div class="flex w-full gap-x-4">
-                        <div class="flex w-full flex-col space-y-2">
-                            <label for="commune[n][nom]" class="nb block text-sm font-medium leading-6">commune</label>
-                            <input type="text" class="form-input w-full rounded-md outline-none text-orange-600 pl-2 border-0 py-1.5 to-orange-900 shadow-md
-                            ring-1 ring-orange-300  focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6" name="commune[n][nom]" id="commune[n][nom]">
-                        </div>
-                    
-                        <div class="flex w-full flex-col space-y-2">
-                            <label for="commune[n][maire]" class="block text-sm font-medium leading-6">nom du maire</label>
-                            <input type="text" class="form-input w-full rounded-md outline-none text-orange-600 pl-2 border-0 py-1.5 to-orange-900 shadow-md
-                            ring-1 ring-orange-300  focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6" name="commune[n][maire]" id="commune[n][maire]">
-                        </div>
-                    </div>
-
-                    <div class="flex items-center gap-x-3">
-                        <p>site touristique</p>
-                        <button type="button" id="btn-plus-photo" class="w-9 h-9 bg-orange-800 relative rounded-lg ombre">
-                            <div class="h-6 w-1 bg-orange-50 absolute left-1/2 top-1/2 
-                            -translate-y-1/2 -translate-x-1/2 rounded-lg"></div>
-                            <div class="h-1 w-6 bg-orange-50 absolute left-1/2 top-1/2 
-                            -translate-y-1/2 -translate-x-1/2 rounded-lg"></div>
-                        </button>
-                    </div>
-
-                    <div id="photo" class="w-[97%] m-auto space-y-3 "></div>
-                    
-                    <button type="button" id="fermer" class="btn-foncer bg-red-600  text-red-50 font-bold text-lg py-2 px-4 rounded-lg shadow-md
-                    focus:outline-none active:ring-red-400 focus:ring-red-400 focus:ring-4
-                    hover:ring-red-400 hover:ring-4 hover:transition-all hover:bg-red-700 
-                    focus:bg-orange-800 w-full">fermer</button>
-
-                </div>
-               
-            </template>
-
-            <template id="photo-temp">
-                
-                <div class="space-y-3 border-l-2 pl-3 border-orange-800">
-
-                    <div class="flex w-full flex-col space-y-2">
-                        <label for="commune[n][photo][n2][lien]" class="block text-sm font-medium leading-6">lien de la photo</label>
-                        <input type="text" class="form-input w-full rounded-md outline-none text-orange-600 pl-2 border-0 py-1.5 to-orange-900 shadow-md
-                        ring-1 ring-orange-300 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6" name="commune[n][photo][n2][lien]" id="commune[n][photo][n2][lien]">
-                    </div>
-                    <div class="flex w-full flex-col space-y-2">
-                        <label for="commune[n][photo][n2][titre]" class="block text-sm font-medium leading-6">titre de la photo</label>
-                        <input type="text" class="form-input w-full rounded-md outline-none text-orange-600 pl-2 border-0 py-1.5 to-orange-900 shadow-md
-                        ring-1 ring-orange-300  focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6" name="commune[n][photo][n2][titre]" id="commune[n][photo][n2][titre]">
-                    </div>
-                    <button type="button" id="fermer2" class="btn-foncer bg-red-600 text-red-50 font-bold text-lg py-2 px-4 rounded-lg shadow-md
-                    focus:outline-none active:ring-red-400 focus:ring-red-400 focus:ring-4
-                    hover:ring-red-400 hover:ring-4 hover:transition-all hover:bg-red-700 
-                    focus:bg-orange-800">fermer</button>
-                </div>
-                       
-            </template>
-
-            <template id="json-commune-temp">
-                <div class="ml-7">
-                    [<br><div class="ml-7">
-                        
-                        "<span class="font-bold text-orange-400 commune"></span>",<br>
-                        "<span class="font-bold text-orange-400 nom"></span>",<br>
-                        
-                        [<br><div id="json-photo" class="ml-7">
-                           
-                            
-                        </div>]
-                    </div>]<span class="virgule"></span>
-                </div>
-            </template>
-
-            <template id="json-photo-temp">
-                <div class="">
-                    [<br>
-                    <div class="ml-7">
-                        "<span class="font-bold text-orange-400 lien"></span>",<br>
-                        "<span class="font-bold text-orange-400 titre"></span>"<br>
-                    </div>]<span class="virgule"></span> <br>
-                </div>
-            </template>
         </form>
+            
+        <template id="commune-temp">
+
+            <div id="item" class="w-[97%] m-auto pl-3 space-y-3 border-l-2 border-orange-800">
+                <div class="flex w-full gap-x-4">
+                    <div class="flex w-full flex-col space-y-2">
+                        <label for="commune[n][nom]" class="nb block text-sm font-medium leading-6">commune</label>
+                        <input type="text" class="form-input w-full rounded-md outline-none text-orange-600 pl-2 border-0 py-1.5 to-orange-900 shadow-md
+                        ring-1 ring-orange-300  focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6" name="commune[n][nom]" id="commune[n][nom]">
+                    </div>
+                
+                    <div class="flex w-full flex-col space-y-2">
+                        <label for="commune[n][maire]" class="block text-sm font-medium leading-6">nom du maire</label>
+                        <input type="text" class="form-input w-full rounded-md outline-none text-orange-600 pl-2 border-0 py-1.5 to-orange-900 shadow-md
+                        ring-1 ring-orange-300  focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6" name="commune[n][maire]" id="commune[n][maire]">
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-x-3">
+                    <p>site touristique</p>
+                    <button type="button" id="btn-plus-photo" class="w-9 h-9 bg-orange-800 relative rounded-lg ombre">
+                        <div class="h-6 w-1 bg-orange-50 absolute left-1/2 top-1/2 
+                        -translate-y-1/2 -translate-x-1/2 rounded-lg"></div>
+                        <div class="h-1 w-6 bg-orange-50 absolute left-1/2 top-1/2 
+                        -translate-y-1/2 -translate-x-1/2 rounded-lg"></div>
+                    </button>
+                </div>
+
+                <div id="photo" class="w-[97%] m-auto space-y-3 "></div>
+                
+                <button type="button" id="fermer" class="btn-foncer bg-red-600  text-red-50 font-bold text-lg py-2 px-4 rounded-lg shadow-md
+                focus:outline-none active:ring-red-400 focus:ring-red-400 focus:ring-4
+                hover:ring-red-400 hover:ring-4 hover:transition-all hover:bg-red-700 
+                focus:bg-orange-800 w-full">fermer</button>
+
+            </div>
+           
+        </template>
+
+        <template id="photo-temp">
+            
+            <div class="space-y-3 border-l-2 pl-3 border-orange-800">
+
+                <div class="flex w-full flex-col space-y-2">
+                    <label for="commune[n][photo][n2][lien]" class="block text-sm font-medium leading-6">lien de la photo</label>
+                    <input type="text" class="form-input w-full rounded-md outline-none text-orange-600 pl-2 border-0 py-1.5 to-orange-900 shadow-md
+                    ring-1 ring-orange-300 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6" name="commune[n][photo][n2][lien]" id="commune[n][photo][n2][lien]">
+                </div>
+                <div class="flex w-full flex-col space-y-2">
+                    <label for="commune[n][photo][n2][titre]" class="block text-sm font-medium leading-6">titre de la photo</label>
+                    <input type="text" class="form-input w-full rounded-md outline-none text-orange-600 pl-2 border-0 py-1.5 to-orange-900 shadow-md
+                    ring-1 ring-orange-300  focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6" name="commune[n][photo][n2][titre]" id="commune[n][photo][n2][titre]">
+                </div>
+                <button type="button" id="fermer2" class="btn-foncer bg-red-600 text-red-50 font-bold text-lg py-2 px-4 rounded-lg shadow-md
+                focus:outline-none active:ring-red-400 focus:ring-red-400 focus:ring-4
+                hover:ring-red-400 hover:ring-4 hover:transition-all hover:bg-red-700 
+                focus:bg-orange-800">fermer</button>
+            </div>
+                   
+        </template>
+
+        <template id="json-commune-temp">
+            <div class="ml-7">
+                [<br><div class="ml-7">
+                    
+                    "<span class="font-bold text-orange-400 commune"></span>",<br>
+                    "<span class="font-bold text-orange-400 nom"></span>",<br>
+                    
+                    [<br><div id="json-photo" class="ml-7">
+                       
+                        
+                    </div>]
+                </div>]<span class="virgule"></span>
+            </div>
+        </template>
+
+        <template id="json-photo-temp">
+            <div class="">
+                [<br>
+                <div class="ml-7">
+                    "<span class="font-bold text-orange-400 lien"></span>",<br>
+                    "<span class="font-bold text-orange-400 titre"></span>"<br>
+                </div>]<span class="virgule"></span> <br>
+            </div>
+        </template>
         <section class="w-[90%] max-w-lg space-y-3">
             <h1 class="text-center text-3xl uppercase font-bold">json</h1>
             <article id="json" class="bg-black/80 text-white p-3 rounded-lg relative">
@@ -158,15 +159,15 @@
                 <code class="space-y-2">
                     {<br>
                     <div class="ml-7">
-                        <span class="text-sm text-green-300">"nom"</span> : "<span id="ville" class="font-bold text-orange-400 ">abidjan</span>",
+                        <span class="text-sm text-green-300">"ville"</span> : "<span id="ville" class="font-bold text-orange-400 "></span>",
                     </div>
                     
                     <div class="ml-7">
-                        <span class="text-sm text-green-300">"chef_district"</span> : "<span id="chef_district" class="font-bold text-orange-400 ">nom prenom</span>",
+                        <span class="text-sm text-green-300">"chef_district"</span> : "<span id="chef_district" class="font-bold text-orange-400 "></span>",
                     </div>
                     
                     <div class="ml-7">
-                        <span class="text-sm text-green-300">"description"</span> : "<span id="description" class="font-bold text-orange-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos ea assumenda atque! Quis dignissimos recusandae consequatur, nihil, amet at nobis provident sapiente dicta dolore ipsum reiciendis nostrum neque quibusdam autem.</span>",
+                        <span class="text-sm text-green-300">"description"</span> : "<span id="description" class="font-bold text-orange-400"></span>",
                     </div>
 
                     <div class="ml-7">
@@ -178,8 +179,10 @@
 }
                 </code>
             </article>
+
         </section>
     </main>
+
     <script src="asset/js/form.js"></script>
 </body>
 </html>

@@ -2,6 +2,8 @@ console.clear()
 
 class DataToJson{
 
+    ACTIVE = 'active'
+
     /**
      * 
      * @param {HTMLElement} parent 
@@ -13,7 +15,6 @@ class DataToJson{
         this.parent = parent
         this.buttonPlus = buttonPlus
         this.template = template
-        // this.nameReplace = nameReplace
         this.form = form
         this.templates_photo = document.querySelector('template#photo-temp')
         this.templates_json = document.querySelector('template#json-commune-temp')
@@ -22,6 +23,8 @@ class DataToJson{
             this.newForm()
         
         this.buttonPlus.onclick = ()=> this.newForm()
+
+        this.fakeData()
         
         this.sync()
 
@@ -103,7 +106,6 @@ class DataToJson{
         element_parent = element_parent.querySelector('#json-photo')
         const element = this.templates_json_photo.content.cloneNode(true)
         const element_json = element.querySelector('span').parentElement
-        console.log(element_parent.childElementCount,element.firstElementChild,element_json);
         if (element_parent.childElementCount > 0) element.firstElementChild.querySelector('.virgule').innerHTML = ','
         element_parent.insertBefore(element,element_parent.firstElementChild)
         return element_json
@@ -128,18 +130,60 @@ class DataToJson{
         document.querySelector(`#json #${element.name}`).innerHTML = value ? value : element.value
     }
 
+    /**
+     * 
+     * @param {Array} data 
+     */
+    choice(data){
+        const n = Math.floor(Math.random()*data.length)
+        console.log(n);
+        return data[n]
+    }
+
+    fakeData(){
+        const data = {
+            nom: [
+                'kouya tosten',
+                'zabi gildas',
+                'yao eudes',
+                'occeni nadia',
+                'occeni nadia',
+                'gouba adonidja',
+                'ayedi manassé',
+                'perthuel drummer',
+            ],
+            ville: [
+                'abidjan',
+                'man',
+                'assinie',
+                'grand-lahou',
+                'bouaké',
+                'korhogo',
+                'daloa',
+                'yamoussoukro',
+            ]
+        }
+        const nom = this.choice(data.nom)
+        const ville = this.choice(data.ville)
+        document.querySelector(`#json #chef_district`).innerHTML = nom
+        document.querySelector(`#json #ville`).innerHTML = ville
+        const description = `La belle ville ${'aeuioy'.includes(ville[0]) ? "d'" : "de "}${ville} est célèbre pour sa magnifique statue d'éléphant doré conçue par son excellence, Mr le chef du district, j'ai nommé Mr <span class="font-bold underline">${nom.toUpperCase()}</span>`
+        document.querySelector(`#json #description`).innerHTML = description
+
+    }
+
     sync(){
         // ville
         const ville = this.form.querySelector('input#ville')
-        ville.onkeydown = () => this.keyDown(ville)
+        ville.onkeyup = () => this.keyDown(ville)
 
         // chef
         const chef = this.form.querySelector('input#chef_district')
-        chef.onkeydown = () => this.keyDown(chef)
+        chef.onkeyup = () => this.keyDown(chef)
 
         // description
         const description = this.form.querySelector('#description')
-        description.onkeydown = () => this.keyDown(description)
+        description.onkeyup = () => this.keyDown(description)
 
         // commune
     }
@@ -151,7 +195,12 @@ class DataToJson{
     copy(){
         const code = document.querySelector('code')
         const copi = code.previousElementSibling
+        copi.parentElement.style.transform = 'linear'
         copi.onclick = ()=>{
+            copi.parentElement.classList.add(this.ACTIVE)
+            setTimeout(() => {
+                copi.parentElement.classList.remove(this.ACTIVE)
+            }, 300);
             let text = code.textContent
             text = JSON.parse(text)
             navigator.clipboard.writeText(JSON.stringify(text,'',4))
@@ -163,6 +212,6 @@ class DataToJson{
 const elements = document.querySelector('#commune')
 const buttonPluss = document.querySelector('#btn-plus-commune')
 const templates = document.querySelector('template#commune-temp')
-
 const form = document.querySelector('form')
+
 new DataToJson(elements,buttonPluss,templates,form)
