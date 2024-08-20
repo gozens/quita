@@ -20,9 +20,9 @@ class DataToJson{
         this.templates_json = document.querySelector('template#json-commune-temp')
         this.templates_json_photo = document.querySelector('template#json-photo-temp')
         if (this.parent.childElementCount == 0)
-            this.newForm()
+            this.newForm(this.buttonPlus)
         
-        this.buttonPlus.onclick = ()=> this.newForm()
+        this.buttonPlus.onclick = ()=> this.newForm(this.buttonPlus)
 
         this.fakeData()
         
@@ -36,7 +36,11 @@ class DataToJson{
      * 
      * @param {Array} data 
      */
-    newForm(){
+    newForm(btn){
+        btn.classList.add(this.ACTIVE)
+        setTimeout(() => {
+            btn.classList.remove(this.ACTIVE)
+        }, 150);
         const element = this.template.content.cloneNode(true)
         
         // modifi le label equip
@@ -56,8 +60,8 @@ class DataToJson{
         // site touristique
         const elements_photo = fermer.parentElement.querySelector('#photo')
         const btn_photo = fermer.parentElement.querySelector('#btn-plus-photo')
-        btn_photo.onclick = () => this.newChildForm(elements_photo, 'n2]',element_json)
-        this.newChildForm(elements_photo, 'n2]', element_json)
+        btn_photo.onclick = () => this.newChildForm(elements_photo,element_json,btn_photo)
+        this.newChildForm(elements_photo, element_json,btn_photo)
 
         // sync
         const input = Array.from(fermer.parentElement.querySelectorAll('input'))
@@ -81,7 +85,11 @@ class DataToJson{
      * @param {HTMLLIElement} element_parent 
      * @param {string} nrplace 
      */
-    newChildForm(element_parent, nrplace, element_json){
+    newChildForm(element_parent, element_json,btn){
+        btn.classList.add(this.ACTIVE)
+        setTimeout(() => {
+            btn.classList.remove(this.ACTIVE)
+        }, 150);
         const element = this.templates_photo.content.cloneNode(true)
         
         // modifi le label equip
@@ -136,7 +144,6 @@ class DataToJson{
      */
     choice(data){
         const n = Math.floor(Math.random()*data.length)
-        console.log(n);
         return data[n]
     }
 

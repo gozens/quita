@@ -162,3 +162,9 @@ footer div span{
 #json1.active span{
   @apply  text-orange-800 transition-colors
 }
+.btn-active.active{
+  @apply bg-orange-50
+}
+.btn-active.active div{
+  @apply bg-orange-800
+}
