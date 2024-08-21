@@ -821,6 +821,10 @@ video {
   display: flex;
 }
 
+.hidden {
+  display: none;
+}
+
 .size-16 {
   width: 4rem;
   height: 4rem;
