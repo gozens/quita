@@ -10,4 +10,8 @@ const audio = document.querySelector('audio')
 
 window.onload  = () => {
     new DataToJson(elements,buttonPluss,templates,form,audio)
+    setTimeout(() => {
+        document.querySelector('.loading').parentElement.remove()
+    }, 1000);
+     
 }
