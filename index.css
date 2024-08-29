@@ -1,8 +1,10 @@
 *{
-    margin: 0;
     padding: 0;
     /* z-index: -1; */
     box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 1150px;
+
 }
 body{
     font-family: Arial, Helvetica, sans-serif;
@@ -16,8 +18,10 @@ body{
     background-position: center;
 }
 header{
+    margin: 0 auto;
     width: 100%;
-    height: 32px;
+    height: 50px;
+    padding: 5px;
     background-color: #fff;
     position: fixed;
     z-index: 4;
@@ -32,7 +36,7 @@ header .titre{
     float: right;
     margin-top: 3px;
     margin-right: 3px;
-    transform: translateY(-30px);
+    transform: translateY(-20px);
     
     animation-name: ci;
     animation-duration: 1s;
@@ -211,6 +215,7 @@ nav .ville::after{
 
 a{
     text-decoration: none;
+    cursor: pointer;
 }
 section.presentation .img{
     background-color: rgba(157, 166, 163, 0.67);
@@ -271,7 +276,7 @@ section.ville_a .photo{
 .desc{
     
     text-align: justify;
-    background-color: rgba(255, 255, 255, 0.877);
+    background-color: rgb(250, 250, 250);
     color: #000;
     padding: 50px 10px 10px 10px;
     font-size: 20px;
@@ -289,9 +294,12 @@ section.ville_a .photo {
 }
 .font{
     position: relative;
-    width: 90%;
-    overflow: hidden;
-    margin-left: 10px;
+    width: 95%;
+    overflow: clip;
+}
+
+.font:hover{
+    cursor:pointer;
 }
 .diapo{
     display: flex;
@@ -408,7 +416,7 @@ footer .copy{
 }
 .right-control, .left-control{
     position: absolute;
-    font-size: 60px;
+    font-size: 50px;
     width: 50px;
     height: 50px;
     z-index: 2;
@@ -422,21 +430,17 @@ footer .copy{
     transform: translateX(10px);
 }
 .right-control{
-    right: 0;
+    right: -8px;
     top: 50%;
     color: green;
 }
 .left-control{
-    left: 0;
+    left: -8px;
     top: 50%;
     color: orange;
 }
 .nom_ville{
     display: none;
-}
-
-.fix:hover{
-    cursor: pointer;
 }
 
 .version {display: none;}
@@ -489,7 +493,25 @@ footer .copy{
         100%{content: '.';}
 
     } */
+
+    .bigContain{
+        background-color: rgb(252, 252, 252);
+        padding: 0 25px;
+        box-shadow:  -15px -15px 25px #a2a2a2,
+             15px 15px 25px #a2a2a2;
+    }
     
+    .tooltip {
+        position: absolute;
+        padding: 5px 10px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        border-radius: 5px;
+        display: none;
+        pointer-events: none;
+        font-size: 14px;
+    }
+
     .logos{
         position: absolute;
         top: 150px;
@@ -501,7 +523,7 @@ footer .copy{
     }
     
     body{
-        background-color: #fff;
+        background-color: #ddd;
         background-image: url();
     }
     section.presentation .img{
@@ -524,7 +546,7 @@ footer .copy{
     section.ville_a .photo .desc{
         width: 98%;
         padding: 5px 15px;
-        margin: 15px 15px 30px 15px;
+        margin: 0 auto;
         position: relative;
     }
     section.ville_a .photo .diapo{
@@ -540,14 +562,17 @@ footer .copy{
         min-width: 260px;
         margin: 10px;
         position: relative;
-        z-index: -2;
+        /* z-index permet à la barre de s'afficher en dessous du footer
+        *  cependant, elle empeche l'application du hover
+        */
+        z-index: -1;
     }
 
-    .fix a .villes:hover{
+    .fix a :hover{
         cursor: pointer;
     }
     .villes{
-        z-index: -1;
+        z-index: 2;
     }
     .voir{
         display: none;

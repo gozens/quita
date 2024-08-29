@@ -1,6 +1,8 @@
 
+import { Carosel } from "./fonction.js"
+document.addEventListener("DOMContentLoaded", (event) => {   
 const assinie = document.getElementById('assinie')
-const defias = assinie.querySelector('.diapo')
+const defias = assinie?.querySelector('.diapo')
 
 function add(params) {
     const div = document.createElement('div')
@@ -10,7 +12,7 @@ function add(params) {
     div.innerHTML += '</div>'
     div.innerHTML +='<div class="tit_"><div class="titre2">carosel 1</div><div class="des">une petite description pour la carosel1</div>'
     div.innerHTML += '</div>'
-    defias.appendChild(div)
+    defias?.appendChild(div)
 }
 
 
@@ -182,19 +184,17 @@ window.onscroll = ()=>{
 
     loads()
 
-    if (scrollY >= (450+137) && innerWidth >=800){
+    if (scrollY >= (450+137) && innerWidth >= 800){
+        barreCote.style.right = (innerWidth - 800)/100
         barreCote.style.position = 'fixed'
-        barreCote.style.top = '35px'
         barreCote.style.width = '250px'
-        barreCote.style.right = '0px'
-        barreCote.style.bottom = '0'
+        barreCote.style.top = '60px'
+        barreCote.style.bottom = '-50px'
         return
     }
     barreCote.style.position = 'static'
 }
 
-
-import { Carosel } from "./fonction.js"
 
 window.onload = ()=>{
     for (let i = 1; i < 12; i++) {
@@ -213,6 +213,5 @@ window.onload = ()=>{
     // });
 }
 
-
-
+});
 

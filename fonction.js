@@ -28,6 +28,7 @@ export class Carosel{
     compter = 0
 
     constructor(element,option){
+        console.log(element)
 
         this.element = element
         this.first = element.firstElementChild.cloneNode(true)
@@ -39,7 +40,8 @@ export class Carosel{
             visible:1,
             defile:1,
             margin:0,
-            observe:false
+            observe:false,
+            pause: false
         },option)
        
         // la taille d'un element
@@ -48,26 +50,47 @@ export class Carosel{
         this.w = this.w.width + this.option.margin
         if (option.auto){
             const t = setInterval(() => {
-                this.nextR()
+                if(!this.option.pause){
+                    this.nextR()
+                }
             }, 3000);
         }
 
         let leftC = this.element.parentNode.querySelector('.left-control')
         let rightC = this.element.parentNode.querySelector('.right-control')
+        let imgs = this.element.querySelectorAll('.imgs')
+        let tooltip = document.getElementById('tooltip')
         
-        leftC.addEventListener('click', () => {
+        leftC.addEventListener('click', (e) => {
             this.nextL()
         })
-        rightC.addEventListener('click', () => {
+        rightC.addEventListener('click', (e) => {
             this.nextR()
         })
 
-        // document.querySelectorAll('.left-control').forEach( ()=> {
-        //     addEventListener('click', () => {
-        //         this.nextL()
-        //         console.log(this.compter)
-        //     })
-        // })
+        const images = Array.from(imgs)
+        images.map( (img) => {
+            img.addEventListener('click', (e) => {
+                this.option.pause = !this.option.pause;
+                this.option.pause ? tooltip.innerText = "clic continuer" : tooltip.innerText = "clic pause"
+                 
+            })
+
+            img.addEventListener('mouseenter', (e) => {
+                tooltip.style.display = "block"
+                
+            })
+
+            img.addEventListener('mousemove', (e) => {
+                tooltip.style.left = e.pageX + 10 + 'px' 
+                tooltip.style.top = e.pageY + 10 + 'px'
+            })
+
+
+            img.addEventListener('mouseleave', function() {
+                tooltip.style.display = 'none';
+            });
+        })
     }
 
     /**
@@ -97,7 +120,7 @@ export class Carosel{
         this.compter += this.option.defile 
         const cal = (-this.compter*this.w) 
         this.element.style.transform = 'translateX('+(cal)+'px)'
-        this.element.style.transition = '1s linear'
+        this.element.style.transition = '2s linear'
         setTimeout(() => {
             if (this.compter >= this.child.length -1){
                 this.compter = 0
