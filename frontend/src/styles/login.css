@@ -1,0 +1,253 @@
+/* Style de base */
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/images/login-bg.jpg") no-repeat center center;
+}
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+}
+
+.login-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px; /* Largeur maximale du formulaire */
+  height: auto; /* Hauteur automatique en fonction du contenu */
+  margin: 10% 0; /* Ajout de marges pour mieux centrer la boîte */
+}
+
+.login-header {
+  display: flex;
+  flex-direction: column;
+  padding: 0.3rem 0;
+  text-align: center;
+}
+
+.login-header .logo-img {
+  width: 100%;
+  max-width: 80px; /* Largeur maximale du logo */
+  height: auto;
+  margin: 0 auto 1rem; /* Centrage du logo avec un espace en dessous */
+}
+
+.login-header h1 {
+  font-size: 1.5rem; /* Taille du titre */
+  color: #333;
+  margin-bottom: 0.3rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #666;
+  font-size: 1rem; /* Taille du texte des labels */
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem; /* Taille du texte dans les champs de saisie */
+  box-sizing: border-box; /* Assure que padding ne dépasse pas la largeur */
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.login-button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #3498db; /* Couleur bleue légère */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem; /* Taille du texte du bouton */
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-align: center;
+}
+
+.login-button:hover {
+  background-color: #2980b9; /* Couleur bleue plus foncée au survol */
+}
+
+.error-message {
+  color: #f44336;
+  text-align: center;
+  margin-top: 1rem;
+  display: none;
+}
+
+.error-message.visible {
+  display: block;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+}
+
+.login-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.back-link,
+.forgot-password {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.back-link:hover,
+.forgot-password:hover {
+  color: #4caf50;
+}
+
+/* Adaptations responsive */
+
+/* Mobile - portrait */
+@media (max-width: 480px) {
+  .login-container {
+    background-position: center top;
+    background-size: cover;
+  }
+
+  .login-box {
+    padding: 1.5rem;
+    max-width: 90%; /* Utilisation de 90% de la largeur de l'écran */
+    min-width: 280px; /* Limite la largeur minimale */
+  }
+
+  .login-header h1 {
+    font-size: 1.5rem; /* Réduction de la taille du titre */
+  }
+
+  .form-group label {
+    font-size: 0.9rem; /* Ajustement du texte des labels */
+  }
+
+  .form-group input {
+    padding: 0.8rem;
+    font-size: 0.9rem; /* Réduction de la taille du texte d'entrée */
+  }
+
+  .login-button {
+    padding: 0.8rem;
+    font-size: 1rem; /* Ajustement du texte du bouton */
+  }
+
+  .login-footer a {
+    font-size: 0.9rem; /* Ajustement des liens dans le pied de page */
+  }
+
+  .login-header .logo-img {
+    max-width: 120px;
+  }
+}
+
+/* Tablettes et écrans plus larges */
+@media (max-width: 768px) {
+  .login-container {
+    background-position: center;
+    background-size: cover;
+  }
+
+  .login-box {
+    max-width: 80%; /* Réduction de la largeur du formulaire */
+  }
+
+  .login-header h1 {
+    font-size: 1.75rem; /* Taille du titre adaptée */
+  }
+
+  .form-group label {
+    font-size: 1rem; /* Taille du texte des labels */
+  }
+
+  .form-group input {
+    padding: 0.8rem;
+    font-size: 1rem; /* Taille d'entrée adaptée */
+  }
+
+  .login-button {
+    padding: 1rem;
+    font-size: 1.1rem; /* Taille du bouton ajustée */
+  }
+
+  .login-footer a {
+    font-size: 1rem; /* Ajustement des liens dans le pied de page */
+  }
+
+  .login-header .logo-img {
+    max-width: 130px;
+  }
+}
+
+/* Ordinateur de bureau et grands écrans */
+@media (min-width: 1024px) {
+  .login-container {
+    background-position: center;
+    background-size: cover;
+  }
+
+  .login-box {
+    padding: 2rem;
+    max-width: 400px;
+  }
+
+  .login-header h1 {
+    font-size: 2rem; /* Taille du titre pour les grands écrans */
+  }
+
+  .form-group label {
+    font-size: 1.1rem; /* Taille du texte des labels pour un grand écran */
+  }
+
+  .form-group input {
+    padding: 0.8rem;
+    font-size: 1rem; /* Taille d'entrée normale pour le bureau */
+  }
+
+  .login-button {
+    padding: 1rem;
+    font-size: 1.2rem; /* Taille du bouton plus grande pour le bureau */
+  }
+
+  .login-footer a {
+    font-size: 1.1rem; /* Taille des liens dans le pied de page pour le bureau */
+  }
+
+  .login-header .logo-img {
+    max-width: 150px;
+  }
+}

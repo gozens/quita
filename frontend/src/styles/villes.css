@@ -1,0 +1,305 @@
+/* Hero section */
+.villes-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("@/assets/images/hero-villes.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  /* margin-top: -80px; */
+  padding-top: 80px;
+  position: relative;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+/* Filtres */
+.villes-filters {
+  background: var(--white);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  margin: -50px auto 0;
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  width: 90%;
+}
+
+.search-bar {
+  margin-bottom: 1.5rem;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--medium-gray);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 20px;
+  background: var(--light-gray);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--primary-color);
+  color: var(--white);
+}
+
+.main-header h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--white);
+  letter-spacing: 2px;
+}
+/* Grille des villes */
+.villes-grid {
+  padding: 4rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.villes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.ville-card {
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ville-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.ville-image {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.ville-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.ville-card:hover .ville-image img {
+  transform: scale(1.1);
+}
+
+.ville-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ville-content h3 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.ville-description {
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.ville-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.ville-region {
+  color: var(--dark-gray);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ville-region i {
+  color: var(--primary-color);
+}
+
+.btn-details {
+  padding: 0.5rem 1rem;
+  background: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.btn-details:hover {
+  background: #1557b0;
+  transform: translateY(-2px);
+}
+
+/* Détails de la ville */
+.ville-details {
+  display: none;
+  background: var(--white);
+  padding: 2rem;
+  margin: 2rem auto;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  max-width: 1200px;
+  width: 90%;
+}
+
+.ville-details.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+.ville-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--medium-gray);
+}
+
+.ville-header h2 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin: 0;
+}
+
+.close-details {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--dark-gray);
+  transition: var(--transition);
+}
+
+.close-details:hover {
+  color: var(--primary-color);
+  transform: rotate(90deg);
+}
+
+.ville-gallery {
+  margin-bottom: 2rem;
+}
+
+.main-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.gallery-thumbs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-thumbs img {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+
+.gallery-thumbs img:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+.ville-description,
+.ville-histoire {
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.ville-description h3,
+.ville-histoire h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .villes-hero {
+    height: 300px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .villes-filters {
+    margin-top: -30px;
+    padding: 1.5rem;
+  }
+
+  .villes-grid {
+    padding: 2rem 1rem;
+  }
+
+  .ville-details {
+    padding: 1.5rem;
+  }
+
+  .main-image {
+    height: 300px;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tourisme Côte d'Ivoire - Découvrez nos villes</title>
+    <link rel="stylesheet" href="/src/styles/style.css" />
+    <link rel="stylesheet" href="/src/styles/home.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <nav class="nav-bar">
+        <div class="logo">
+          <img
+            src="/public/images/logo.png"
+            alt="Logo Tourisme CI"
+            class="logo-img"
+          />
+          <h1>Tourisme CI</h1>
+        </div>
+        <button class="toggle-menu" aria-label="Menu">☰</button>
+        <div class="nav-links">
+          <a href="/" class="active">Accueil</a>
+          <a href="/villes.html">Villes</a>
+          <a href="/actualites.html">Actualités</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/login.html" class="admin-link">Administration</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Découvrez la Côte d'Ivoire</h1>
+          <p>
+            Un pays aux mille richesses, une culture vibrante et des paysages à
+            couper le souffle
+          </p>
+        </div>
+      </section>
+
+      <section class="featured-cities">
+        <h2>Nos Villes Touristiques</h2>
+        <div id="cities-grid" class="news-container">
+          <!-- Les villes seront chargées dynamiquement ici -->
+        </div>
+      </section>
+
+      <section class="latest-news">
+        <h2>Actualités Récentes</h2>
+        <div id="news-container" class="news-container">
+          <!-- Les actualités seront chargées dynamiquement ici -->
+        </div>
+      </section>
+
+      <section class="tourist-sites">
+        <h2>Sites Touristiques Populaires</h2>
+        <div id="sites-container" class="sites-container">
+          <!-- Les sites touristiques seront chargés dynamiquement ici -->
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>À Propos</h3>
+          <p>
+            Découvrez la beauté et la richesse culturelle de la Côte d'Ivoire à
+            travers nos villes touristiques.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>Liens Rapides</h3>
+          <ul>
+            <li><a href="/villes.html">Villes</a></li>
+            <li><a href="/actualites.html">Actualités</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>Email: contact@tourisme-ci.com</p>
+          <p>Téléphone: +225 XX XX XX XX</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Tourisme Côte d'Ivoire. Tous droits réservés.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/home.js"></script>
+  </body>
+</html>

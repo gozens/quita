@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contactez-nous - Tourisme CI</title>
+    <link rel="stylesheet" href="/src/styles/style.css" />
+    <link rel="stylesheet" href="/src/styles/contact.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <nav class="nav-bar">
+        <div class="logo" style="display: flex">
+          <img
+            src="/public/images/logo.png"
+            alt="Logo Tourisme CI"
+            class="logo-img"
+          />
+          <h1>Tourisme CI</h1>
+        </div>
+        <div class="nav-links">
+          <a href="/">Accueil</a>
+          <a href="/villes.html">Villes</a>
+          <a href="/actualites.html">Actualités</a>
+          <a href="/contact.html" class="active">Contact</a>
+          <a href="/login.html" class="admin-link">Administration</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="contact-hero">
+        <div class="hero-content">
+          <h1>Contactez-nous</h1>
+          <p>
+            Nous sommes là pour répondre à toutes vos questions sur le tourisme
+            en Côte d'Ivoire
+          </p>
+        </div>
+      </section>
+
+      <section class="contact-container">
+        <div class="contact-info">
+          <div class="info-card">
+            <span class="icon">📍</span>
+            <h3>Notre Adresse</h3>
+            <p>Abidjan, Plateau<br />01 BP 1234</p>
+          </div>
+          <div class="info-card">
+            <span class="icon">📞</span>
+            <h3>Téléphone</h3>
+            <p>+225 XX XX XX XX<br />+225 XX XX XX XX</p>
+          </div>
+          <div class="info-card">
+            <span class="icon">✉️</span>
+            <h3>Email</h3>
+            <p>contact@tourisme-ci.com<br />info@tourisme-ci.com</p>
+          </div>
+          <div class="info-card">
+            <span class="icon">⏰</span>
+            <h3>Horaires</h3>
+            <p>Lun - Ven: 8h - 18h<br />Sam: 9h - 13h</p>
+          </div>
+        </div>
+
+        <div class="contact-form-container">
+          <form id="contactForm" class="contact-form">
+            <h2>Envoyez-nous un message</h2>
+
+            <div class="form-group">
+              <label for="nom">Nom complet</label>
+              <input type="text" id="nom" name="nom" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="sujet">Sujet</label>
+              <select id="sujet" name="sujet" required>
+                <option value="">Sélectionnez un sujet</option>
+                <option value="information">Demande d'information</option>
+                <option value="reservation">Réservation</option>
+                <option value="reclamation">Réclamation</option>
+                <option value="partenariat">Partenariat</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Envoyer le message</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="map-section">
+        <h2>Notre Localisation</h2>
+        <div class="map-container">
+          <!-- La carte sera intégrée ici -->
+          <div id="map" class="map"></div>
+        </div>
+      </section>
+
+      <section class="faq-section">
+        <h2>Questions Fréquentes</h2>
+        <div class="faq-container">
+          <div class="faq-item">
+            <h3>Comment réserver une visite guidée ?</h3>
+            <p>
+              Vous pouvez réserver une visite guidée en nous contactant par
+              téléphone ou en remplissant le formulaire de contact ci-dessus.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Quels sont les meilleurs moments pour visiter ?</h3>
+            <p>
+              La période idéale pour visiter la Côte d'Ivoire s'étend de
+              novembre à mars, pendant la saison sèche.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Proposez-vous des circuits touristiques ?</h3>
+            <p>
+              Oui, nous proposons différents circuits touristiques adaptés à vos
+              envies et à votre budget.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>À Propos</h3>
+          <p>
+            Découvrez la beauté et la richesse culturelle de la Côte d'Ivoire à
+            travers nos villes touristiques.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>Liens Rapides</h3>
+          <ul>
+            <li><a href="/villes.html">Villes</a></li>
+            <li><a href="/actualites.html">Actualités</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>Email: contact@tourisme-ci.com</p>
+          <p>Téléphone: +225 XX XX XX XX</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Tourisme Côte d'Ivoire. Tous droits réservés.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/contact.js"></script>
+  </body>
+</html>

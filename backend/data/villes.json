@@ -1,0 +1,183 @@
+[
+  {
+    "id": "1",
+    "nom": "Abidjan",
+    "description": "Abidjan est une ville côtière dynamique et le centre économique de la Côte d'Ivoire.",
+    "image": "/public/images/abidjan.jpg",
+    "population": "5 000 000 habitants",
+    "region": "Sud-Comoé",
+    "sites": [
+      {
+        "nom": "Place de la Concorde",
+        "description": "Cette place est située au 1er étage de la Basilique Notre-Dame de la Paix.",
+        "image": [
+          {
+            "nom": "Place de la Concorde",
+            "src": "/public/images/abidjan_site1.jpg"
+          }
+        ],
+        "horaires": "08:00 - 18:00",
+        "tarifs": "25€/heure"
+      }
+    ],
+    "images": [
+      { "nom": "Vue d'Abidjan", "src": "/public/images/abidjan_image1.jpg" },
+      { "nom": "Plage d'Abidjan", "src": "/public/images/abidjan_image2.jpg" }
+    ],
+    "actualites": [
+      {
+        "id": 1,
+        "image": "/public/images/abidjan_news1.jpg",
+        "titre": "Le développement économique d'Abidjan",
+        "date": "2025-03-01",
+        "contenu": "Le développement économique de la ville continue d'attirer des investissements internationaux."
+      }
+    ],
+    "createdAt": "2025-02-12T12:00:00.000Z",
+    "updatedAt": "2025-02-18T12:00:00.000Z"
+  },
+  {
+    "id": "2",
+    "nom": "Yamoussoukro",
+    "description": "Yamoussoukro, la capitale politique de la Côte d'Ivoire, est célèbre pour la Basilique Notre-Dame de la Paix.",
+    "image": "/public/images/yamoussoukro.jpg",
+    "population": "300 000 habitants",
+    "region": "Loh-Djiboua",
+    "sites": [
+      {
+        "nom": "Basilique Notre-Dame de la Paix",
+        "description": "La basilique est l'une des plus grandes églises du monde, un symbole de la foi chrétienne.",
+        "image": [
+          { "nom": "Basilique", "src": "/public/images/yamoussoukro_site1.jpg" }
+        ],
+        "horaires": "09:00 - 17:00",
+        "tarifs": "Gratuit"
+      }
+    ],
+    "images": [
+      {
+        "nom": "Vue de Yamoussoukro",
+        "src": "/public/images/yamoussoukro_image1.jpg"
+      }
+    ],
+    "actualites": [
+      {
+        "id": 2,
+        "image": "/public/images/yamoussoukro_news1.jpg",
+        "titre": "Yamoussoukro en pleine expansion",
+        "date": "2025-03-10",
+        "contenu": "La ville se transforme rapidement avec de nouveaux projets d'infrastructure et d'urbanisation."
+      }
+    ],
+    "createdAt": "2025-03-01T12:00:00.000Z",
+    "updatedAt": "2025-03-12T12:00:00.000Z"
+  },
+  {
+    "id": "3",
+    "nom": "San Pedro",
+    "description": "San Pedro est un port commercial majeur sur la côte ouest de la Côte d'Ivoire.",
+    "image": "/public/images/sanpedro.jpg",
+    "population": "150 000 habitants",
+    "region": "Bas-Sassandra",
+    "sites": [
+      {
+        "nom": "Plage de San Pedro",
+        "description": "La plage de San Pedro est une destination idéale pour les amateurs de sable et de soleil.",
+        "image": [
+          {
+            "nom": "Plage de San Pedro",
+            "src": "/public/images/sanpedro_site1.jpg"
+          }
+        ],
+        "horaires": "Toute la journée",
+        "tarifs": "Gratuit"
+      }
+    ],
+    "images": [
+      {
+        "nom": "Port de San Pedro",
+        "src": "/public/images/sanpedro_image1.jpg"
+      }
+    ],
+    "actualites": [
+      {
+        "id": 3,
+        "image": "/public/images/sanpedro_news1.jpg",
+        "titre": "Le port de San Pedro se modernise",
+        "date": "2025-03-05",
+        "contenu": "Des projets d'agrandissement et de modernisation du port devraient améliorer la connectivité internationale."
+      }
+    ],
+    "createdAt": "2025-02-25T12:00:00.000Z",
+    "updatedAt": "2025-03-05T12:00:00.000Z"
+  },
+  {
+    "id": "4",
+    "nom": "Bouaké",
+    "description": "Bouaké est une ville de l'intérieur du pays, connue pour son histoire et sa culture.",
+    "image": "/public/images/bouake.jpg",
+    "population": "600 000 habitants",
+    "region": "Vallée du Bandama",
+    "sites": [
+      {
+        "nom": "Parc National de la Comoé",
+        "description": "Un parc naturel riche en biodiversité, idéal pour les amoureux de la nature et les aventuriers.",
+        "image": [
+          {
+            "nom": "Parc de la Comoé",
+            "src": "/public/images/bouake_site1.jpg"
+          }
+        ],
+        "horaires": "08:00 - 18:00",
+        "tarifs": "20€/personne"
+      }
+    ],
+    "images": [
+      { "nom": "Bouaké Vue", "src": "/public/images/bouake_image1.jpg" }
+    ],
+    "actualites": [
+      {
+        "id": 4,
+        "image": "/public/images/bouake_news1.jpg",
+        "titre": "Les efforts pour améliorer le tourisme à Bouaké",
+        "date": "2025-03-02",
+        "contenu": "Les autorités locales investissent dans le secteur du tourisme pour attirer davantage de visiteurs."
+      }
+    ],
+    "createdAt": "2025-03-05T12:00:00.000Z",
+    "updatedAt": "2025-03-10T12:00:00.000Z"
+  },
+  {
+    "id": "5",
+    "nom": "Korhogo",
+    "description": "Korhogo est la capitale du nord de la Côte d'Ivoire et est connue pour sa culture et ses traditions.",
+    "image": "/public/images/korhogo.jpg",
+    "population": "350 000 habitants",
+    "region": "Savanes",
+    "sites": [
+      {
+        "nom": "Marché de Korhogo",
+        "description": "Le marché de Korhogo est célèbre pour ses tissus traditionnels et ses produits artisanaux.",
+        "image": [
+          { "nom": "Marché Korhogo", "src": "/public/images/korhogo_site1.jpg" }
+        ],
+        "horaires": "06:00 - 20:00",
+        "tarifs": "Gratuit"
+      }
+    ],
+    "images": [
+      { "nom": "Korhogo Panorama", "src": "/public/images/korhogo_image1.jpg" }
+    ],
+    "actualites": [
+      {
+        "id": 5,
+        "image": "/public/images/korhogo_news1.jpg",
+        "titre": "Korhogo et son secteur artisanal",
+        "date": "2025-02-28",
+        "contenu": "Korhogo renforce sa position en tant que centre de l'artisanat en Côte d'Ivoire."
+      }
+    ],
+    "createdAt": "2025-02-20T12:00:00.000Z",
+    "updatedAt": "2025-03-01T12:00:00.000Z"
+  }
+]

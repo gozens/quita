@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nos Villes - Tourisme CI</title>
+    <link rel="stylesheet" href="/src/styles/style.css" />
+    <link rel="stylesheet" href="/src/styles/villes.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <nav class="nav-bar">
+        <div class="logo" style="display: flex">
+          <img
+            src="/public/images/logo.png"
+            alt="Logo Tourisme CI"
+            class="logo-img"
+          />
+          <h1>Tourisme CI</h1>
+        </div>
+        <button class="toggle-menu" aria-label="Menu">☰</button>
+        <div class="nav-links">
+          <a href="/">Accueil</a>
+          <a href="/villes.html" class="active">Villes</a>
+          <a href="/actualites.html">Actualités</a>
+          <a href="/contact.html">Contact</a>
+          <a href="/login.html" class="admin-link">Administration</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="villes-hero">
+        <div class="hero-content">
+          <h1>Découvrez Nos Villes</h1>
+          <p>
+            Explorez la richesse culturelle et historique des villes de Côte
+            d'Ivoire
+          </p>
+        </div>
+      </section>
+
+      <section class="villes-filters">
+        <div class="search-bar">
+          <input
+            type="text"
+            id="searchVille"
+            placeholder="Rechercher une ville..."
+          />
+        </div>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="all">
+            Toutes les villes
+          </button>
+          <button class="filter-btn" data-filter="nord">Nord</button>
+          <button class="filter-btn" data-filter="sud">Sud</button>
+          <button class="filter-btn" data-filter="est">Est</button>
+          <button class="filter-btn" data-filter="ouest">Ouest</button>
+        </div>
+      </section>
+
+      <section class="villes-grid">
+        <div id="villesContainer" class="villes-container">
+          <!-- Les villes seront chargées dynamiquement ici -->
+        </div>
+      </section>
+
+      <section class="ville-details" id="villeDetails">
+        <!-- Les détails de la ville sélectionnée seront affichés ici -->
+      </section>
+
+      <section class="featured-sites">
+        <h2>Sites Touristiques Populaires</h2>
+        <div id="sitesSlider" class="sites-slider">
+          <!-- Les sites touristiques seront chargés dynamiquement ici -->
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>À Propos</h3>
+          <p>
+            Découvrez la beauté et la richesse culturelle de la Côte d'Ivoire à
+            travers nos villes touristiques.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>Liens Rapides</h3>
+          <ul>
+            <li><a href="/villes.html">Villes</a></li>
+            <li><a href="/actualites.html">Actualités</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>Email: contact@tourisme-ci.com</p>
+          <p>Téléphone: +225 XX XX XX XX</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Tourisme Côte d'Ivoire. Tous droits réservés.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/villes.js"></script>
+    <script>
+      document.querySelector(".toggle-menu").addEventListener("click", () => {
+        const navLinks = document.querySelector(".nav-links");
+        navLinks.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>

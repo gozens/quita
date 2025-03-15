@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panneau d'administration - Côte d'Ivoire Tourisme</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="admin.css" />
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+  </head>
+  <body>
+    <nav class="admin-nav">
+      <div class="nav-container">
+        <h1>Administration</h1>
+        <div>
+          <a href="/admin/messages.html" class="btn">Messages</a>
+          <button id="logoutBtn" class="btn">Déconnexion</button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="admin-container">
+      <div class="sidebar">
+        <button class="tab-btn active" data-tab="dashboard">
+          📊 Tableau de bord
+        </button>
+        <button class="tab-btn" data-tab="villes">🏢 Villes</button>
+        <button class="tab-btn" data-tab="actualites">📰 Actualités</button>
+        <button class="tab-btn" data-tab="sites">🏛️ Sites touristiques</button>
+      </div>
+
+      <div class="content">
+        <div id="villes" class="tab-content active">
+          <h2>Gestion des villes</h2>
+          <button class="btn add-btn" id="addVilleBtn">
+            ➕ Ajouter une ville
+          </button>
+          <div id="villesList"></div>
+        </div>
+
+        <div id="actualites" class="tab-content">
+          <h2>Gestion des actualités</h2>
+          <button class="btn add-btn" id="addActuBtn">
+            ➕ Ajouter une actualité
+          </button>
+          <div id="actualitesList"></div>
+        </div>
+
+        <div id="sites" class="tab-content">
+          <h2>Gestion des sites touristiques</h2>
+          <button class="btn add-btn" id="addSiteBtn">
+            ➕ Ajouter un site
+          </button>
+          <div id="sitesList"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Dashboard -->
+    <div id="dashboard" class="content-section active">
+      <div class="dmodal-content">
+        <div class="stat-card">
+          <h3>Villes</h3>
+          <p class="stat-number" id="villesCount">0</p>
+        </div>
+        <div class="stat-card">
+          <h3>Sites Touristiques</h3>
+          <p class="stat-number" id="sitesCount">0</p>
+        </div>
+        <div class="stat-card">
+          <h3>Actualités</h3>
+          <p class="stat-number" id="actualitesCount">0</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Ajout Ville -->
+    <div id="addVilleModal" class="modal">
+      <div class="modal-content">
+        <h2>➕ Ajouter une ville</h2>
+        <form id="addVilleForm" onsubmit="addVille(event)">
+          <div class="form-group">
+            <label for="nom">Nom de la ville</label>
+            <input type="text" id="nom" name="nom" required />
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="image">Image principale</label>
+            <input
+              type="file"
+              id="image"
+              name="image"
+              accept="image/*"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="creation">Date de création</label>
+            <input type="text" id="creation" name="creation" required />
+          </div>
+          <div class="form-group">
+            <label for="histoire">Histoire</label>
+            <textarea id="histoire" name="histoire" required></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn">Ajouter</button>
+            <button
+              type="button"
+              class="btn"
+              onclick="closeModal('addVilleModal')"
+            >
+              Annuler
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal Ajout Site -->
+    <div id="addSiteModal" class="modal">
+      <div class="modal-content">
+        <h2>Ajouter un site touristique</h2>
+        <form id="addSiteForm">
+          <div class="form-group">
+            <label for="siteName">Nom du site</label>
+            <input type="text" id="siteName" name="nom" required />
+          </div>
+          <div class="form-group">
+            <label for="siteDescription">Description</label>
+            <textarea
+              id="siteDescription"
+              name="description"
+              required
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="siteImage">Image</label>
+            <input
+              type="file"
+              id="siteImage"
+              name="image"
+              accept="image/*"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="horaires">Horaires</label>
+            <input type="text" id="horaires" name="horaires" required />
+          </div>
+          <div class="form-group">
+            <label for="tarifs">Tarifs</label>
+            <input type="text" id="tarifs" name="tarifs" required />
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn">Ajouter</button>
+            <button
+              type="button"
+              class="btn"
+              onclick="closeModal('addSiteModal')"
+            >
+              Annuler
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal Ajout Actualité -->
+    <div id="addActuModal" class="modal">
+      <div class="modal-content">
+        <h2>Ajouter une actualité</h2>
+        <form id="addActuForm">
+          <div class="form-group">
+            <label for="actuTitre">Titre</label>
+            <input type="text" id="actuTitre" name="titre" required />
+          </div>
+          <div class="form-group">
+            <label for="actuDate">Date</label>
+            <input type="date" id="actuDate" name="date" required />
+          </div>
+          <div class="form-group">
+            <label for="actuContenu">Contenu</label>
+            <textarea id="actuContenu" name="contenu" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="actuImage">Image</label>
+            <input
+              type="file"
+              id="actuImage"
+              name="image"
+              accept="image/*"
+              required
+            />
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn">Ajouter</button>
+            <button
+              type="button"
+              class="btn"
+              onclick="closeModal('addActuModal')"
+            >
+              Annuler
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script type="module" src="admin.js"></script>
+  </body>
+</html>
