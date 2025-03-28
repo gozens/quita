@@ -16,17 +16,18 @@ const storage = multer.diskStorage({
     // Déterminer le dossier de destination en fonction du type d'image
     let uploadPath = path.join(__dirname, "../uploads");
 
+    console.log(req.body.type, req.body.image);
     switch (req.body.type) {
       case "hero":
         uploadPath = path.join(uploadPath, "heros");
         break;
-      case "ville":
+      case "villes":
         uploadPath = path.join(uploadPath, "villes");
         break;
-      case "site":
+      case "sites":
         uploadPath = path.join(uploadPath, "sites");
         break;
-      case "actualite":
+      case "actualites":
         uploadPath = path.join(uploadPath, "actualites");
         break;
       default:

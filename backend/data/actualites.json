@@ -1,0 +1,18 @@
+[
+  {
+    "ville": 1,
+    "id": 1,
+    "image": "/public/images/abidjan_news1.jpg",
+    "titre": "Le développement économique d'Abidjan",
+    "date": "2025-03-01",
+    "contenu": "Le développement économique de la ville continue d'attirer des investissements internationaux."
+  },
+  {
+    "ville": 1,
+    "id": 2,
+    "image": "/public/images/abidjan_news2.jpg",
+    "titre": "Le développement économique d'Abidjan",
+    "date": "2025-03-01",
+    "contenu": "Le développement économique de la ville continue d'attirer des investissements internationaux."
+  }
+]

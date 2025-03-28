@@ -30,14 +30,18 @@ document.querySelectorAll(".tab-btn").forEach((button) => {
 });
 
 // Fonction pour gérer l'upload d'image
-async function uploadImage(file) {
+async function uploadImage(file, type) {
   const formData = new FormData();
+  formData.append("type", type);
   formData.append("image", file);
 
   try {
     const response = await fetch("/api/upload", {
       method: "POST",
       body: formData,
+      headers: {
+        Authorization: `Bearer ${Cookies.get("adminToken")}`,
+      },
     });
     const data = await response.json();
     return data.imageUrl;
@@ -53,13 +57,15 @@ window.addVille = async function (event) {
   const formData = new FormData(event.target);
   const imageFile = formData.get("image");
 
-  const imageUrl = await uploadImage(imageFile);
+  const imageUrl = await uploadImage(imageFile, "villes");
   if (!imageUrl) return;
 
   const newVille = {
     nom: formData.get("nom"),
     description: formData.get("description"),
     image: imageUrl,
+    population: formData.get("population"),
+    region: formData.get("region"),
     histoire: {
       creation: formData.get("creation"),
       contenu: formData.get("histoire"),
@@ -79,9 +85,13 @@ window.addVille = async function (event) {
     });
 
     if (response.ok) {
-      await loadVilles();
-      closeModal("addVilleModal");
-      event.target.reset();
+      try {
+        closeModal("addVilleModal");
+        await loadVilles();
+        event.target.reset();
+      } catch (error) {
+        console.error("Error loading pour la deuxème requète", error);
+      }
     }
   } catch (error) {
     console.error("Erreur lors de l'ajout:", error);
@@ -89,11 +99,12 @@ window.addVille = async function (event) {
 };
 
 // Fonction pour ajouter un site touristique
-window.addSite = async function (villeId) {
+window.addSite = async function (event) {
+  event.preventDefault();
+  const villeId = event.target.getAttribute("data-ville-id");
   const formData = new FormData(document.getElementById("addSiteForm"));
   const imageFile = formData.get("image");
-
-  const imageUrl = await uploadImage(imageFile);
+  const imageUrl = await uploadImage(imageFile, "sites");
   if (!imageUrl) return;
 
   const newSite = {
@@ -125,11 +136,14 @@ window.addSite = async function (villeId) {
 };
 
 // Fonction pour ajouter une actualité
-window.addActualite = async function (villeId) {
+window.addActualite = async function (event) {
+  event.preventDefault();
+  const villeId = event.target.getAttribute("data-ville-id");
+
   const formData = new FormData(document.getElementById("addActuForm"));
   const imageFile = formData.get("image");
 
-  const imageUrl = await uploadImage(imageFile);
+  const imageUrl = await uploadImage(imageFile, "actualites");
   if (!imageUrl) return;
 
   const newActu = {
@@ -186,8 +200,8 @@ function displayVilles(villes) {
             <p>${ville.description}</p>
             <div class="item-details">
                 <h4>Histoire</h4>
-                <p>Création: ${ville.histoire.creation}</p>
-                <p>${ville.histoire.contenu}</p>
+                <p>Création: ${ville.histoire?.creation}</p>
+                <p>${ville.histoire?.contenu}</p>
                 
                 <h4>Sites Touristiques (${ville.sites.length})</h4>
                 <div class="sites-list">
@@ -218,9 +232,15 @@ function displayVilles(villes) {
                 </div>
             </div>
             <div class="item-actions">
-                <button class="btn" onclick="addSiteModal('${id}')">Ajouter un site</button>
-                <button class="btn" onclick="addActuModal('${id}')">Ajouter une actualité</button>
-                <button class="delete-btn" onclick="deleteVille('${id}')">Supprimer</button>
+                <button class="btn" onclick="addSiteModal('${
+                  ville.id
+                }')">Ajouter un site</button>
+                <button class="btn" onclick="addActuModal('${
+                  ville.id
+                }')">Ajouter une actualité</button>
+                <button class="delete-btn" onclick="deleteVille('${
+                  ville.id
+                }')">Supprimer</button>
             </div>
         `;
     villesList.appendChild(card);
@@ -236,9 +256,13 @@ window.closeModal = function (modalId) {
   document.getElementById(modalId).style.display = "none";
 };
 
-window.addVilleModal = function () {
+// window.addVilleModal = function () {
+//   openModal("addVilleModal");
+// };
+
+document.getElementById("addVilleBtn").addEventListener("click", () => {
   openModal("addVilleModal");
-};
+});
 
 window.addSiteModal = function (villeId) {
   document.getElementById("addSiteForm").dataset.villeId = villeId;

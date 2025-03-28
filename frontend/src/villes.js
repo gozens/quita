@@ -183,9 +183,9 @@ class VillesManager {
                                           0,
                                           150
                                         )}...</p>
-                                        <a href="/actualites.html?id=${
-                                          actu.id
-                                        }">Lire la suite</a>
+                                        <a href="/actualites.html?ville=${villeId}&id=${
+                                        actu.id
+                                      }">Lire la suite</a>
                                     </div>
                                 </div>
                             `

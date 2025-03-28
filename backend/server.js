@@ -4,6 +4,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import cookieParser from "cookie-parser";
 import fs from "fs";
+// import multer from "multer";
 import "dotenv/config";
 import { villesRouter } from "./routes/villes.js";
 import { uploadRouter } from "./routes/upload.js";

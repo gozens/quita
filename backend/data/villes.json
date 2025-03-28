@@ -18,23 +18,52 @@
         ],
         "horaires": "08:00 - 18:00",
         "tarifs": "25€/heure"
+      },
+      {
+        "id": "1743028178487",
+        "nom": "Site 2025-03-26T22:29:38.484Z",
+        "description": "otre-Dame de la Paix. 1",
+        "image": [],
+        "tarifs": "25€/heure",
+        "createdAt": "2025-03-26T22:29:38.487Z"
+      },
+      {
+        "id": "1743172101572",
+        "nom": "premier site",
+        "description": "Abibjan",
+        "image": "/uploads/sites/image-1743172101520-684601017.png",
+        "tarifs": "gratuit",
+        "createdAt": "2025-03-28T14:28:21.572Z"
       }
     ],
     "images": [
-      { "nom": "Vue d'Abidjan", "src": "/public/images/abidjan_image1.jpg" },
-      { "nom": "Plage d'Abidjan", "src": "/public/images/abidjan_image2.jpg" }
+      {
+        "nom": "Vue d'Abidjan",
+        "src": "/public/images/abidjan_image1.jpg"
+      },
+      {
+        "nom": "Plage d'Abidjan",
+        "src": "/public/images/abidjan_image2.jpg"
+      }
     ],
     "actualites": [
       {
-        "id": 1,
+        "id": "1",
         "image": "/public/images/abidjan_news1.jpg",
         "titre": "Le développement économique d'Abidjan",
         "date": "2025-03-01",
         "contenu": "Le développement économique de la ville continue d'attirer des investissements internationaux."
+      },
+      {
+        "id": "1743172629403",
+        "titre": "actualité du jour",
+        "contenu": "rien pour le moment",
+        "image": "/uploads/actualites/image-1743172629305-252541297.jpg",
+        "createdAt": "2025-03-28T14:37:09.403Z"
       }
     ],
     "createdAt": "2025-02-12T12:00:00.000Z",
-    "updatedAt": "2025-02-18T12:00:00.000Z"
+    "updatedAt": "2025-03-28T14:37:09.403Z"
   },
   {
     "id": "2",
@@ -45,10 +74,14 @@
     "region": "Loh-Djiboua",
     "sites": [
       {
+        "id": "3",
         "nom": "Basilique Notre-Dame de la Paix",
         "description": "La basilique est l'une des plus grandes églises du monde, un symbole de la foi chrétienne.",
         "image": [
-          { "nom": "Basilique", "src": "/public/images/yamoussoukro_site1.jpg" }
+          {
+            "nom": "Basilique",
+            "src": "/public/images/yamoussoukro_site1.jpg"
+          }
         ],
         "horaires": "09:00 - 17:00",
         "tarifs": "Gratuit"
@@ -62,7 +95,7 @@
     ],
     "actualites": [
       {
-        "id": 2,
+        "id": "1",
         "image": "/public/images/yamoussoukro_news1.jpg",
         "titre": "Yamoussoukro en pleine expansion",
         "date": "2025-03-10",
@@ -81,6 +114,7 @@
     "region": "Bas-Sassandra",
     "sites": [
       {
+        "id": "1",
         "nom": "Plage de San Pedro",
         "description": "La plage de San Pedro est une destination idéale pour les amateurs de sable et de soleil.",
         "image": [
@@ -101,7 +135,7 @@
     ],
     "actualites": [
       {
-        "id": 3,
+        "id": "3",
         "image": "/public/images/sanpedro_news1.jpg",
         "titre": "Le port de San Pedro se modernise",
         "date": "2025-03-05",
@@ -120,6 +154,7 @@
     "region": "Vallée du Bandama",
     "sites": [
       {
+        "id": "1",
         "nom": "Parc National de la Comoé",
         "description": "Un parc naturel riche en biodiversité, idéal pour les amoureux de la nature et les aventuriers.",
         "image": [
@@ -133,11 +168,14 @@
       }
     ],
     "images": [
-      { "nom": "Bouaké Vue", "src": "/public/images/bouake_image1.jpg" }
+      {
+        "nom": "Bouaké Vue",
+        "src": "/public/images/bouake_image1.jpg"
+      }
     ],
     "actualites": [
       {
-        "id": 4,
+        "id": "4",
         "image": "/public/images/bouake_news1.jpg",
         "titre": "Les efforts pour améliorer le tourisme à Bouaké",
         "date": "2025-03-02",
@@ -156,21 +194,28 @@
     "region": "Savanes",
     "sites": [
       {
+        "id": "1",
         "nom": "Marché de Korhogo",
         "description": "Le marché de Korhogo est célèbre pour ses tissus traditionnels et ses produits artisanaux.",
         "image": [
-          { "nom": "Marché Korhogo", "src": "/public/images/korhogo_site1.jpg" }
+          {
+            "nom": "Marché Korhogo",
+            "src": "/public/images/korhogo_site1.jpg"
+          }
         ],
         "horaires": "06:00 - 20:00",
         "tarifs": "Gratuit"
       }
     ],
     "images": [
-      { "nom": "Korhogo Panorama", "src": "/public/images/korhogo_image1.jpg" }
+      {
+        "nom": "Korhogo Panorama",
+        "src": "/public/images/korhogo_image1.jpg"
+      }
     ],
     "actualites": [
       {
-        "id": 5,
+        "id": "5",
         "image": "/public/images/korhogo_news1.jpg",
         "titre": "Korhogo et son secteur artisanal",
         "date": "2025-02-28",
@@ -179,5 +224,46 @@
     ],
     "createdAt": "2025-02-20T12:00:00.000Z",
     "updatedAt": "2025-03-01T12:00:00.000Z"
+  },
+  {
+    "id": "1743169108069",
+    "nom": "premier site",
+    "description": "le description",
+    "image": "/uploads/villes/image-1743169107221-100975871.png",
+    "population": "30 000 000",
+    "region": "la region",
+    "sites": [],
+    "actualites": [],
+    "createdAt": "2025-03-28T13:38:28.069Z",
+    "updatedAt": "2025-03-28T13:38:28.069Z"
+  },
+  {
+    "id": "1743169934254",
+    "nom": "premier site",
+    "description": "sqsfs",
+    "image": "/uploads/villes/image-1743169934200-42119123.png",
+    "population": "30 000 000",
+    "region": "sdgssfd",
+    "sites": [
+      {
+        "id": "1743172794284",
+        "nom": "le vrai site",
+        "description": "petite description",
+        "image": "/uploads/sites/image-1743172794213-610278301.jpg",
+        "tarifs": "gratuit",
+        "createdAt": "2025-03-28T14:39:54.284Z"
+      }
+    ],
+    "actualites": [
+      {
+        "id": "1743172845409",
+        "titre": "visite du président à Bondoukou",
+        "contenu": "blablablablablablabalbalbalbalbla",
+        "image": "/uploads/actualites/image-1743172845359-633547899.png",
+        "createdAt": "2025-03-28T14:40:45.409Z"
+      }
+    ],
+    "createdAt": "2025-03-28T13:52:14.254Z",
+    "updatedAt": "2025-03-28T14:40:45.409Z"
   }
 ]
