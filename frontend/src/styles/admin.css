@@ -1,172 +1,174 @@
 /* Styles pour l'interface d'administration */
 .admin-nav {
-    background-color: #2c3e50;
-    padding: 1rem;
-    color: white;
+  background-color: #2c3e50;
+  padding: 1rem;
+  color: white;
 }
 
 .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .admin-container {
-    display: flex;
-    max-width: 1200px;
-    margin: 2rem auto;
-    gap: 2rem;
+  display: flex;
+  max-width: 1200px;
+  margin: 2rem auto;
+  gap: 2rem;
 }
 
 .sidebar {
-    width: 200px;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .content {
-    flex: 1;
+  flex: 1;
 }
 
 .tab-btn {
-    padding: 1rem;
-    border: none;
-    background-color: #f5f5f5;
-    cursor: pointer;
-    text-align: left;
-    border-radius: 4px;
+  padding: 1rem;
+  border: none;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  text-align: left;
+  border-radius: 4px;
 }
 
 .tab-btn.active {
-    background-color: #3498db;
-    color: white;
+  background-color: #3498db;
+  color: white;
 }
 
 .tab-content {
-    display: none;
-    padding: 1rem;
-    background-color: white;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: none;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .tab-content.active {
-    display: block;
+  display: block;
 }
 
 .item-card {
-    background-color: white;
-    border-radius: 4px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: white;
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .item-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 .item-image {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 4px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
 }
 
 .item-details {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
-.sites-list, .actualites-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
+.sites-list,
+.actualites-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
-.site-item, .actu-item {
-    background-color: #f5f5f5;
-    padding: 0.5rem;
-    border-radius: 4px;
+.site-item,
+.actu-item {
+  background-color: #f5f5f5;
+  padding: 0.5rem;
+  border-radius: 4px;
 }
 
 .site-item img {
-    width: 100%;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-bottom: 0.5rem;
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
 }
 
 .modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 4px;
-    max-width: 500px;
-    margin: 2rem auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 4px;
+  max-width: 600px;
+  margin: 2rem auto;
 }
 
 .form-group {
-    margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
+  display: block;
+  margin-bottom: 0.4rem;
 }
 
 .form-group input,
 .form-group textarea {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+  width: 100%;
+  padding: 0.3rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
 }
 
 .form-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 1rem;
-    margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 .btn {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    background-color: #3498db;
-    color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: white;
 }
 
 .btn:hover {
-    background-color: #2980b9;
+  background-color: #2980b9;
 }
 
 .add-btn {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .delete-btn {
-    background-color: #e74c3c;
+  background-color: #e74c3c;
 }
 
 .delete-btn:hover {
-    background-color: #c0392b;
+  background-color: #c0392b;
 }

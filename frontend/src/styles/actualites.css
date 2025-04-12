@@ -1,7 +1,7 @@
 /* Hero section */
 .actualites-hero {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("@/assets/images/hero-actualites.jpg");
+    url("http://localhost:3001/uploads/structure/12.jpeg");
   background-size: cover;
   background-position: center;
   height: 60vh;

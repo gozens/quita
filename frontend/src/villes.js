@@ -1,5 +1,6 @@
 // Configuration de l'API
 const API_URL = "http://localhost:3001/api";
+const staticImage = "http://localhost:3001";
 
 // Gestionnaire de la page des villes
 class VillesManager {
@@ -58,7 +59,7 @@ class VillesManager {
           ville.region
         }">
                 <div class="ville-image">
-                    <img src="${ville.image}" alt="${ville.nom}">
+                    <img src="${staticImage}${ville.image}" alt="${ville.nom}">
                 </div>
                 <div class="ville-content">
                     <h3>${ville.nom}</h3>
@@ -106,7 +107,7 @@ class VillesManager {
                     </div>
                     
                     <div class="ville-gallery">
-                        <img src="${ville.image}" alt="${
+                        <img src="${staticImage}${ville.image}" alt="${
         ville.nom
       }" class="main-image">
                         <div class="gallery-thumbs">
@@ -115,7 +116,7 @@ class VillesManager {
                                 ? ville.images
                                     .map(
                                       (img) => `
-                                <img src="${img.src}" alt="${ville.nom}" onclick="this.parentElement.previousElementSibling.src='${img.src}'">
+                                <img src="${staticImage}${img.src}" alt="${ville.nom}" onclick="this.parentElement.previousElementSibling.src='${img.src}'">
                             `
                                     )
                                     .join("")
@@ -143,7 +144,9 @@ class VillesManager {
                                     .map(
                                       (site) => `
                                 <div class="site-card">
-                                    <img src="${site.image}" alt="${site.nom}">
+                                    <img src="${staticImage}${
+                                        site.image
+                                      }" alt="${site.nom}">
                                     <h4>${site.nom}</h4>
                                     <p>${site.description.substring(
                                       0,
@@ -171,9 +174,9 @@ class VillesManager {
                                     .map(
                                       (actu) => `
                                 <div class="actualite-card">
-                                    <img src="${actu.image}" alt="${
-                                        actu.titre
-                                      }">
+                                    <img src="${staticImage}${
+                                        actu.image
+                                      }" alt="${actu.titre}">
                                     <div class="actualite-content">
                                         <h4>${actu.titre}</h4>
                                         <span class="date">${new Date(

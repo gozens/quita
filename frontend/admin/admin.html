@@ -40,7 +40,7 @@
 
         <div id="actualites" class="tab-content">
           <h2>Gestion des actualités</h2>
-          <button class="btn add-btn" id="addActuBtn">
+          <button class="btn add-btn" id="addActuBtn" onclick="addActuModal()">
             ➕ Ajouter une actualité
           </button>
           <div id="actualitesList"></div>
@@ -66,7 +66,7 @@
 
         <div id="sites" class="tab-content">
           <h2>Gestion des sites touristiques</h2>
-          <button class="btn add-btn" id="addSiteBtn">
+          <button class="btn add-btn" id="addSiteBtn" onclick="addSiteModal()">
             ➕ Ajouter un site
           </button>
           <div id="sitesList"></div>
@@ -212,7 +212,9 @@
             />
           </div>
           <div class="form-actions">
-            <button type="submit" class="btn">Ajouter</button>
+            <button type="submit" class="btn" id="addActuBtnForm">
+              Ajouter
+            </button>
             <button
               type="button"
               class="btn"
@@ -225,6 +227,7 @@
       </div>
     </div>
 
+    <script type="module" src="function.js"></script>
     <script type="module" src="admin.js"></script>
   </body>
 </html>
