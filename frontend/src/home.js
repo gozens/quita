@@ -54,7 +54,7 @@ class HomeManager {
 
   async loadLatestNews() {
     try {
-      const response = await fetch(`${API_URL}/actualites`);
+      const response = await fetch(`${API_URL}/composants/actualites`);
       const news = await response.json();
 
       this.newsContainer.innerHTML = news
@@ -90,7 +90,7 @@ class HomeManager {
 
   async loadPopularSites() {
     try {
-      const response = await fetch(`${API_URL}/sites`);
+      const response = await fetch(`${API_URL}/composants/sites`);
       const sites = await response.json();
 
       this.sitesContainer.innerHTML = sites

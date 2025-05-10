@@ -3,11 +3,12 @@
     "id": "1",
     "nom": "Abidjan",
     "description": "Abidjan est une ville côtière dynamique et le centre économique de la Côte d'Ivoire.",
-    "image": "/public/images/abidjan.jpg",
+    "image": "/uploads/abidjan/place-AKWABA.jpg",
     "population": "5 000 000 habitants",
     "region": "Sud-Comoé",
     "sites": [
       {
+        "id": "1743028178437",
         "nom": "Place de la Concorde",
         "description": "Cette place est située au 1er étage de la Basilique Notre-Dame de la Paix.",
         "image": [
@@ -21,19 +22,39 @@
       },
       {
         "id": "1743028178487",
-        "nom": "Site 2025-03-26T22:29:38.484Z",
-        "description": "otre-Dame de la Paix. 1",
-        "image": [],
+        "nom": "La place de la pyramide du Plateau",
+        "description": "La place de la pyramide du Plateau",
+        "image": "/uploads/abidjan/La-Pyramide.webp",
         "tarifs": "25€/heure",
+        "horaires": "Toute la journée",
         "createdAt": "2025-03-26T22:29:38.487Z"
       },
       {
         "id": "1743172101572",
-        "nom": "premier site",
+        "nom": "La place de la cathédrale",
         "description": "Abibjan",
-        "image": "/uploads/sites/image-1743172101520-684601017.png",
+        "image": "/uploads/abidjan/categrale.jpg",
         "tarifs": "gratuit",
+        "horaires": "Toute la journée",
         "createdAt": "2025-03-28T14:28:21.572Z"
+      },
+      {
+        "id": "1744412300350",
+        "nom": "qdhjqsg",
+        "description": "eooyosiyoidf",
+        "image": "/uploads/sites/image-1744412299777-931667978.jpg",
+        "tarifs": "gratuit",
+        "horaires": "Toute la journée",
+        "createdAt": "2025-04-11T22:58:20.350Z"
+      },
+      {
+        "id": "1744412848485",
+        "nom": "xvxcvxcbxcb",
+        "description": "dfdfdfhhh",
+        "image": "/uploads/sites/image-1744412848470-945794842.png",
+        "tarifs": "22frs",
+        "horaires": "Toute la journée",
+        "createdAt": "2025-04-11T23:07:28.485Z"
       }
     ],
     "images": [
@@ -48,28 +69,31 @@
     ],
     "actualites": [
       {
-        "id": "1",
-        "image": "/public/images/abidjan_news1.jpg",
-        "titre": "Le développement économique d'Abidjan",
+        "id": "1743172629418",
+        "image": "/uploads/actualites/image-1744466443466-196255322.jpg",
+        "titre": "Le développement économique d'Abidjan Nord",
         "date": "2025-03-01",
-        "contenu": "Le développement économique de la ville continue d'attirer des investissements internationaux."
+        "categorie": "Culture",
+        "contenu": "Le développement économique de la ville continue d'attirer des investissements internationaux.",
+        "updatedAt": "2025-04-12T14:00:43.527Z"
       },
       {
-        "id": "1743172629403",
-        "titre": "actualité du jour",
-        "contenu": "rien pour le moment",
-        "image": "/uploads/actualites/image-1743172629305-252541297.jpg",
-        "createdAt": "2025-03-28T14:37:09.403Z"
+        "id": "1744408926675",
+        "titre": "Le développement économique d'Abidjan",
+        "contenu": "Le développement économique de la ville continue d'attirer des investissements internationaux.",
+        "image": "/uploads/actualites/image-1744408926233-902057185.jpg",
+        "categorie": "Découverte",
+        "createdAt": "2025-04-11T22:02:06.675Z"
       }
     ],
     "createdAt": "2025-02-12T12:00:00.000Z",
-    "updatedAt": "2025-03-28T14:37:09.403Z"
+    "updatedAt": "2025-04-13T02:13:14.525Z"
   },
   {
     "id": "2",
     "nom": "Yamoussoukro",
     "description": "Yamoussoukro, la capitale politique de la Côte d'Ivoire, est célèbre pour la Basilique Notre-Dame de la Paix.",
-    "image": "/public/images/yamoussoukro.jpg",
+    "image": "/uploads/lahou/10.jpeg",
     "population": "300 000 habitants",
     "region": "Loh-Djiboua",
     "sites": [
@@ -85,6 +109,15 @@
         ],
         "horaires": "09:00 - 17:00",
         "tarifs": "Gratuit"
+      },
+      {
+        "id": "1743213797283",
+        "nom": "premier site",
+        "description": "ggfgggfg",
+        "image": "/uploads/sites/image-1743213797135-766586317.png",
+        "tarifs": "gratuiut",
+        "horaires": "Toute la journée",
+        "createdAt": "2025-03-29T02:03:17.283Z"
       }
     ],
     "images": [
@@ -96,20 +129,22 @@
     "actualites": [
       {
         "id": "1",
-        "image": "/public/images/yamoussoukro_news1.jpg",
+        "image": "/uploads/actualites/image-1744509220413-213134903.jpg",
         "titre": "Yamoussoukro en pleine expansion",
         "date": "2025-03-10",
-        "contenu": "La ville se transforme rapidement avec de nouveaux projets d'infrastructure et d'urbanisation."
+        "categorie": "Cuisine",
+        "contenu": "La ville se transforme rapidement avec de nouveaux projets d'infrastructure et d'urbanisation.",
+        "updatedAt": "2025-04-13T01:53:42.045Z"
       }
     ],
     "createdAt": "2025-03-01T12:00:00.000Z",
-    "updatedAt": "2025-03-12T12:00:00.000Z"
+    "updatedAt": "2025-04-12T14:29:05.549Z"
   },
   {
     "id": "3",
     "nom": "San Pedro",
     "description": "San Pedro est un port commercial majeur sur la côte ouest de la Côte d'Ivoire.",
-    "image": "/public/images/sanpedro.jpg",
+    "image": "/uploads/san-pedro/8.jpeg",
     "population": "150 000 habitants",
     "region": "Bas-Sassandra",
     "sites": [
@@ -136,10 +171,12 @@
     "actualites": [
       {
         "id": "3",
-        "image": "/public/images/sanpedro_news1.jpg",
-        "titre": "Le port de San Pedro se modernise",
+        "image": "/uploads/actualites/image-1744468228089-787508395.jpg",
+        "titre": "Le port de San Pedro dans le sud se modernise",
         "date": "2025-03-05",
-        "contenu": "Des projets d'agrandissement et de modernisation du port devraient améliorer la connectivité internationale."
+        "contenu": "Des projets d'agrandissement et de modernisation du port devraient améliorer la connectivité internationale.",
+        "categorie": "Cuisine",
+        "updatedAt": "2025-04-12T14:30:28.145Z"
       }
     ],
     "createdAt": "2025-02-25T12:00:00.000Z",
@@ -149,7 +186,7 @@
     "id": "4",
     "nom": "Bouaké",
     "description": "Bouaké est une ville de l'intérieur du pays, connue pour son histoire et sa culture.",
-    "image": "/public/images/bouake.jpg",
+    "image": "/uploads/bouake/mussé.jpg",
     "population": "600 000 habitants",
     "region": "Vallée du Bandama",
     "sites": [
@@ -176,10 +213,12 @@
     "actualites": [
       {
         "id": "4",
-        "image": "/public/images/bouake_news1.jpg",
-        "titre": "Les efforts pour améliorer le tourisme à Bouaké",
+        "image": "/uploads/actualites/image-1744466598541-441950570.jpg",
+        "titre": "Les efforts pour améliorer le tourisme à Bouaké 1",
         "date": "2025-03-02",
-        "contenu": "Les autorités locales investissent dans le secteur du tourisme pour attirer davantage de visiteurs."
+        "contenu": "Les autorités locales investissent dans le secteur du tourisme pour attirer davantage de visiteurs.",
+        "categorie": "Cuisine",
+        "updatedAt": "2025-04-12T14:03:18.595Z"
       }
     ],
     "createdAt": "2025-03-05T12:00:00.000Z",
@@ -189,7 +228,7 @@
     "id": "5",
     "nom": "Korhogo",
     "description": "Korhogo est la capitale du nord de la Côte d'Ivoire et est connue pour sa culture et ses traditions.",
-    "image": "/public/images/korhogo.jpg",
+    "image": "/uploads/korhogo/3.jpg",
     "population": "350 000 habitants",
     "region": "Savanes",
     "sites": [
@@ -216,54 +255,27 @@
     "actualites": [
       {
         "id": "5",
-        "image": "/public/images/korhogo_news1.jpg",
+        "image": "/uploads/actualites/image-1744466532530-338034980.jpg",
         "titre": "Korhogo et son secteur artisanal",
         "date": "2025-02-28",
-        "contenu": "Korhogo renforce sa position en tant que centre de l'artisanat en Côte d'Ivoire."
+        "contenu": "Korhogo renforce sa position en tant que centre de l'artisanat en Côte d'Ivoire.",
+        "categorie": "Cuisine",
+        "updatedAt": "2025-04-12T14:02:12.635Z"
       }
     ],
     "createdAt": "2025-02-20T12:00:00.000Z",
     "updatedAt": "2025-03-01T12:00:00.000Z"
   },
   {
-    "id": "1743169108069",
-    "nom": "premier site",
-    "description": "le description",
-    "image": "/uploads/villes/image-1743169107221-100975871.png",
+    "id": "1744392487560",
+    "nom": "Abengourou",
+    "description": "Abengourou est ville de l'Ouest du pays.",
+    "image": "/uploads/villes/image-1744392487389-265615787.gif",
     "population": "30 000 000",
-    "region": "la region",
+    "region": "Bongolo",
     "sites": [],
     "actualites": [],
-    "createdAt": "2025-03-28T13:38:28.069Z",
-    "updatedAt": "2025-03-28T13:38:28.069Z"
-  },
-  {
-    "id": "1743169934254",
-    "nom": "premier site",
-    "description": "sqsfs",
-    "image": "/uploads/villes/image-1743169934200-42119123.png",
-    "population": "30 000 000",
-    "region": "sdgssfd",
-    "sites": [
-      {
-        "id": "1743172794284",
-        "nom": "le vrai site",
-        "description": "petite description",
-        "image": "/uploads/sites/image-1743172794213-610278301.jpg",
-        "tarifs": "gratuit",
-        "createdAt": "2025-03-28T14:39:54.284Z"
-      }
-    ],
-    "actualites": [
-      {
-        "id": "1743172845409",
-        "titre": "visite du président à Bondoukou",
-        "contenu": "blablablablablablabalbalbalbalbla",
-        "image": "/uploads/actualites/image-1743172845359-633547899.png",
-        "createdAt": "2025-03-28T14:40:45.409Z"
-      }
-    ],
-    "createdAt": "2025-03-28T13:52:14.254Z",
-    "updatedAt": "2025-03-28T14:40:45.409Z"
+    "createdAt": "2025-04-11T17:28:07.560Z",
+    "updatedAt": "2025-04-13T02:11:06.207Z"
   }
 ]

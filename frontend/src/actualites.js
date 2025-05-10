@@ -50,7 +50,7 @@ class ActualitesManager {
 
   async loadActualites() {
     try {
-      const response = await fetch(`${API_URL}/actualites`);
+      const response = await fetch(`${API_URL}/composants/actualites`);
       this.actualites = await response.json();
 
       // Afficher l'actualité à la une

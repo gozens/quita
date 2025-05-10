@@ -134,7 +134,7 @@
     <!-- Modal Ajout Site -->
     <div id="addSiteModal" class="modal">
       <div class="modal-content">
-        <h2>Ajouter un site touristique</h2>
+        <h2 id="titleSiteForm">Ajouter un site touristique</h2>
         <form
           id="addSiteForm"
           onsubmit="addSite(event)"
@@ -171,7 +171,9 @@
             <input type="text" id="tarifs" name="tarifs" required />
           </div>
           <div class="form-actions">
-            <button type="submit" class="btn">Ajouter</button>
+            <button type="submit" id="addSiteBtnForm" class="btn">
+              Ajouter
+            </button>
             <button
               type="button"
               class="btn"

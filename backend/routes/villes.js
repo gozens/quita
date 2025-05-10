@@ -1,6 +1,7 @@
 import express from "express";
 import fs from "fs/promises";
 import path from "path";
+import { Mutex } from "async-mutex";
 import { fileURLToPath } from "url";
 import { verifyToken } from "./auth.js";
 
@@ -9,9 +10,10 @@ const __dirname = path.dirname(__filename);
 
 const router = express.Router();
 const dataPath = path.join(__dirname, "../data/villes.json");
+const mutex = new Mutex();
 
 // Fonction utilitaire pour lire le fichier JSON
-async function readVillesFile() {
+export async function readVillesFile() {
   try {
     const data = await fs.readFile(dataPath, "utf8");
     return JSON.parse(data);
@@ -26,8 +28,15 @@ async function readVillesFile() {
 }
 
 // Fonction utilitaire pour écrire dans le fichier JSON
-async function writeVillesFile(data) {
-  await fs.writeFile(dataPath, JSON.stringify(data, null, 2), "utf8");
+// export async function writeVillesFile(data) {
+//   await fs.writeFile(dataPath, JSON.stringify(data, null, 2), "utf8");
+// }
+
+export async function writeVillesFile(data) {
+  await mutex.runExclusive(async () => {
+    const json = JSON.stringify(data, null, 2);
+    await fs.writeFile(dataPath, json, "utf8");
+  });
 }
 
 // Récupérer toutes les villes
@@ -220,6 +229,30 @@ router.put("/:id/sites/:siteId", verifyToken, async (req, res) => {
   }
 });
 
+//lire un site à un ville
+router.get("/:id/sites/:siteId", async (req, res) => {
+  try {
+    const villes = await readVillesFile();
+    const ville = villes.find((v) => v.id === req.params.id);
+
+    if (!ville) {
+      return res.status(404).json({ error: "Ville non trouvée" });
+    }
+
+    const site = ville.sites.find((a) => a.id === req.params.siteId);
+    // return res.status(200).json(req.params.siteId);
+
+    if (!site) {
+      return res.status(404).json({ error: "Site non trouvée" });
+    }
+
+    return res.status(200).json(site);
+  } catch (error) {
+    console.error("Erreur lors de la récupération du site:", error);
+    res.status(500).json({ error: "Erreur lors de la récupération du site" });
+  }
+});
+
 //Supprimer un site touristique à une ville
 router.delete("/:id/sites/:siteId", verifyToken, async (req, res) => {
   try {
@@ -349,11 +382,12 @@ router.put("/:id/actualites/:actualiteId", verifyToken, async (req, res) => {
     // Mise à jour de l'actualité
     actualite.titre = req.body.titre || actualite.titre;
     actualite.contenu = req.body.contenu || actualite.contenu;
-    actualite.image = actualite.image || actualite.image;
-    actualite.contenu = req.body.contenu;
+    actualite.image = req.body.image || actualite.image;
     actualite.categorie = req.body.categorie || actualite.categorie;
     actualite.updatedAt = new Date().toISOString();
 
+    // console.log("final", villes);
+    // return;
     await writeVillesFile(villes);
     res.status(200).json(actualite);
   } catch (error) {

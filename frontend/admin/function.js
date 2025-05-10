@@ -1,3 +1,5 @@
+import { displayStats } from "./admin.js";
+
 const staticImage = "http://localhost:3001";
 
 // Fonction pour gérer l'upload d'image
@@ -75,9 +77,13 @@ export async function loadVilles() {
     const response = await fetch("/api/villes");
     const response1 = await fetch("/api/composants/sites");
     const response2 = await fetch("/api/composants/actualites");
+    const response3 = await fetch("/api/composants/stats");
     const data = await response.json();
     const sites = await response1.json();
     const actualites = await response2.json();
+    const stats = await response3.json();
+
+    displayStats(stats);
     displayVilles(data);
     displayActualites(actualites);
     displaySites(sites);
@@ -192,8 +198,8 @@ export function displaySites(sites) {
                     <p>${site.tarifs}</p>
                 </div>
                 <div class="item-actions">
-                    <button class="btn" onclick="addSiteModal('${site.id}')">Modifier</button>
-                    <button class="delete-btn" onclick="deleteSite('${site.id}')">Supprimer</button>
+                    <button class="btn" onclick="addSiteModal('${site.villeId}', '${site.id}')">Modifier</button>
+                    <button class="delete-btn" onclick="deleteSite('${site.villeId}', '${site.id}')">Supprimer</button>
                 </div>
             `;
     sitesList.appendChild(card);
@@ -411,7 +417,7 @@ window.deleteSite = async function (villeId, siteId) {
     });
 
     if (response.ok) {
-      await displayActualites();
+      loadVilles();
     }
   } catch (error) {
     console.error("Erreur lors de la suppression:", error);
