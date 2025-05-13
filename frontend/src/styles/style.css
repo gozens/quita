@@ -90,6 +90,8 @@ body {
   justify-content: space-between;
   width: 100%;
   align-items: center;
+  background-color: var(--primary-color); /* couleur de fond principale */
+  padding: 5px 6px;
 }
 
 .nav-links {
@@ -273,6 +275,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
+  margin: 0 1rem;
 }
 
 .footer-section h3 {

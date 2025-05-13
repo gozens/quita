@@ -56,6 +56,7 @@ class HomeManager {
     try {
       const response = await fetch(`${API_URL}/composants/actualites`);
       const news = await response.json();
+      console.log(news);
 
       this.newsContainer.innerHTML = news
         .slice(0, 3)
@@ -73,9 +74,9 @@ class HomeManager {
                         ).toLocaleDateString()}</span>
                         <h3>${item.titre}</h3>
                         <p>${item.contenu.substring(0, 150)}...</p>
-                        <a href="/actualites.html?id=${
-                          item.id
-                        }" class="read-more">Lire la suite</a>
+                        <a href="/actualites.html?ville=${item.villeId}&id=${
+            item.id
+          }" class="read-more">Lire la suite</a>
                     </div>
                 </div>
             `

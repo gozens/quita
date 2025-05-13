@@ -184,6 +184,9 @@
   width: 90%;
 }
 
+.ville-details-content h3 {
+  font-size: 1.5rem;
+}
 .ville-details.active {
   display: block;
   animation: fadeIn 0.3s ease;
@@ -202,6 +205,47 @@
   color: var(--primary-color);
   font-size: 2rem;
   margin: 0;
+}
+
+.site-card,
+.actualite-card {
+  display: flex;
+  /* max-height: 300px; */
+  gap: 0.5rem;
+  margin: 1rem;
+  margin-bottom: 2.5rem;
+  overflow: hidden;
+}
+
+.info {
+  margin-left: 0.5rem;
+  flex: 5;
+}
+
+.info h4,
+.actualite-content h4 {
+  font-size: 18px;
+  color: var(--primary-color);
+}
+.site-card img,
+.actualite-card img {
+  display: block;
+  height: auto;
+  min-width: 400px;
+  max-height: 400px;
+  flex: 4;
+  margin: 0 auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.actualite-content {
+  margin-left: 0.5rem;
+  flex: 5;
+}
+
+.site-info {
+  margin-left: 15px;
 }
 
 .close-details {
@@ -287,6 +331,22 @@
     padding: 1.5rem;
   }
 
+  .site-card,
+  .actualite-card {
+    flex-direction: column;
+  }
+
+  .site-card img,
+  .actualite-card img {
+    width: 100%;
+    max-height: 300px;
+    margin: 0 auto;
+  }
+
+  .info {
+    flex: 1;
+    margin-left: 0;
+  }
   .main-image {
     height: 300px;
   }

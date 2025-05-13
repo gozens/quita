@@ -147,14 +147,16 @@ class VillesManager {
                                     <img src="${staticImage}${
                                         site.image
                                       }" alt="${site.nom}">
-                                    <h4>${site.nom}</h4>
-                                    <p>${site.description.substring(
-                                      0,
-                                      100
-                                    )}...</p>
-                                    <div class="site-info">
-                                        <span>⏰ ${site.horaires}</span>
-                                        <span>💰 ${site.tarifs}</span>
+                                    <div class="info">
+                                      <h4>${site.nom}</h4>
+                                      <p>${site.description.substring(
+                                        0,
+                                        100
+                                      )}...</p>
+                                      <div class="site-info">
+                                          <span>⏰ ${site.horaires}</span>
+                                          <span>💰 ${site.tarifs}</span>
+                                      </div>
                                     </div>
                                 </div>
                             `
