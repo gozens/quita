@@ -12,6 +12,6 @@
     "js-cookie": "^3.0.5"
   },
   "devDependencies": {
-    "vite": "^5.0.8"
+    "vite": "^6.3.5"
   }
 }
